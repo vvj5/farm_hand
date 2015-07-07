@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @income.id %>
+</p>
+
+<p>
+  <strong>Egg:</strong>
+  <%= @income.egg_id %>
+</p>
+
+<p>
+  <strong>Quantity sold:</strong>
+  <%= @income.quantity_sold %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @income.amount %>
+</p>
+
+<p>
+  <strong>Farm:</strong>
+  <%= @income.Farm %>
+</p>
+
+<%= link_to 'Edit', edit_income_path(@income) %> |
+<%= link_to 'Back', incomes_path %>

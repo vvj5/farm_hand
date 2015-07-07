@@ -1,0 +1,37 @@
+<%= form_for(@egg) do |f| %>
+  <% if @egg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@egg.errors.count, "error") %> prohibited this egg from being saved:</h2>
+
+      <ul>
+      <% @egg.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :color_id %><br>
+    <%= f.text_field :color_id %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :Animal_id %><br>
+    <%= f.text_field :Animal_id %>
+  </div>
+  <div class="field">
+    <%= f.label :Income_id %><br>
+    <%= f.text_field :Income_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
