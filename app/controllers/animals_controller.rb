@@ -53,10 +53,10 @@ class AnimalsController < ApplicationController
 
   # DELETE /animals/1
   # DELETE /animals/1.json
-  def destroy
+  def remove
     @animal.destroy
     respond_to do |format|
-      format.html { redirect_to animals_url, notice: 'Animal was successfully destroyed.' }
+      format.html { redirect_to animals_url, notice: 'Animal was successfully removed.' }
       format.json { head :no_content }
     end
   end

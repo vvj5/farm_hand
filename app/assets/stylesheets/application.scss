@@ -1,6 +1,10 @@
 
 @import 'materialize';
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700,400italic);
 
+html {
+    font-family: 'Bitter', serif;
+  }
 
 footer {
 position: fixed;
@@ -11,3 +15,28 @@ color: white;
 text-align: center;
 }
 
+.bolder {
+  font-weight: bold;
+}
+
+.greenit {
+  color: #8CC252;
+}
+
+.whiteit {
+  color: white;
+}
+
+.hero {
+  background-image: image-url('eggs.jpg');
+  height: 600px;
+  background-repeat: none;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: middle;
+  // opacity: 0.4;
+}
+
+.transit {
+  opacity: 0.4;
+}

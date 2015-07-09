@@ -1,0 +1,14 @@
+<tbody>
+    <% @eggs.each do |egg| %>
+      <tr>
+        <td><%= egg.id %></td>
+        <td><%= egg.color_id %></td>
+        <td><%= egg.price %></td>
+        <td><%= egg.Animal %></td>
+        <td><%= egg.Income %></td>
+        <td><%= link_to 'Show', egg %></td>
+        <td><%= link_to 'Edit', edit_egg_path(egg) %></td>
+        <td><%= link_to 'Destroy', egg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>

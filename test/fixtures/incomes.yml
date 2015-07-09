@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  egg_id: 1
+  quantity_sold: 1
+  amount: 1
+  Farm_id: 
+
+two:
+  id: 1
+  egg_id: 1
+  quantity_sold: 1
+  amount: 1
+  Farm_id: 
