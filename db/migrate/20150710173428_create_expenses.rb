@@ -1,8 +1,9 @@
 class CreateExpenses < ActiveRecord::Migration
   def change
     create_table :expenses do |t|
-      t.string :title
+      t.string :name
       t.integer :amount
+      t.string :category
       t.belongs_to :farm, index: true, foreign_key: true
 
       t.timestamps null: false

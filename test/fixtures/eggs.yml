@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  color_id: MyString
-  price: 1
-  Animal_id: 
-  Income_id: 
+  color: MyString
+  quantity: 1
+  animal_id: 
 
 two:
-  id: 1
-  color_id: MyString
-  price: 1
-  Animal_id: 
-  Income_id: 
+  color: MyString
+  quantity: 1
+  animal_id: 

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  title: MyString
+  name: MyString
   amount: 1
-  Farm_id: 
+  category: MyString
+  farm_id: 
 
 two:
-  id: 1
-  title: MyString
+  name: MyString
   amount: 1
-  Farm_id: 
+  category: MyString
+  farm_id: 

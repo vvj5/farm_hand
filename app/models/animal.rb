@@ -1,5 +1,4 @@
 class Animal < ActiveRecord::Base
-  has_many  :breeds
-  has_many  :eggs, through: :breeds
-  validates :name, presence: true
+  belongs_to :farm
+  has_many :eggs
 end

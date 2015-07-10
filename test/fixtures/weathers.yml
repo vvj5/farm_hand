@@ -4,18 +4,14 @@ one:
   high_temp: 1
   low_temp: 1
   wind_speed: 1
+  sunrise: 2015-07-10 12:37:01
+  sunset: 2015-07-10 12:37:01
   precipitation: 1
-  sunrise: 1
-  sunset: 1
-  location_id: 1
-  Location_id: 
 
 two:
   high_temp: 1
   low_temp: 1
   wind_speed: 1
+  sunrise: 2015-07-10 12:37:01
+  sunset: 2015-07-10 12:37:01
   precipitation: 1
-  sunrise: 1
-  sunset: 1
-  location_id: 1
-  Location_id: 

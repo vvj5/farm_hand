@@ -11,44 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707223615) do
+ActiveRecord::Schema.define(version: 20150710173700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "animals", force: :cascade do |t|
     t.string   "name"
-    t.integer  "breed_id"
-    t.integer  "egg_id"
+    t.string   "breed"
+    t.integer  "farm_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "breeds", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "egg_id"
-    t.integer  "animal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "breeds", ["animal_id"], name: "index_breeds_on_animal_id", using: :btree
+  add_index "animals", ["farm_id"], name: "index_animals_on_farm_id", using: :btree
 
   create_table "eggs", force: :cascade do |t|
-    t.string   "color_id"
-    t.integer  "price"
+    t.string   "color"
+    t.integer  "quantity"
     t.integer  "animal_id"
-    t.integer  "income_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "eggs", ["animal_id"], name: "index_eggs_on_animal_id", using: :btree
-  add_index "eggs", ["income_id"], name: "index_eggs_on_income_id", using: :btree
 
   create_table "expenses", force: :cascade do |t|
-    t.string   "title"
+    t.string   "name"
     t.integer  "amount"
+    t.string   "category"
     t.integer  "farm_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,64 +48,42 @@ ActiveRecord::Schema.define(version: 20150707223615) do
   add_index "expenses", ["farm_id"], name: "index_expenses_on_farm_id", using: :btree
 
   create_table "farms", force: :cascade do |t|
-    t.integer  "animal_id"
-    t.integer  "income_id"
-    t.integer  "expense_id"
-    t.integer  "weather_id"
+    t.string   "name"
+    t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "incomes", force: :cascade do |t|
-    t.integer  "egg_id"
-    t.integer  "quantity_sold"
+    t.integer  "quantity"
     t.integer  "amount"
     t.integer  "farm_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "incomes", ["farm_id"], name: "index_incomes_on_farm_id", using: :btree
-
-  create_table "locations", force: :cascade do |t|
-    t.integer  "zipcode"
-    t.integer  "user_id"
-    t.integer  "weather_id"
+    t.integer  "egg_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password"
-    t.string   "password_confirmation"
-    t.integer  "location_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  add_index "users", ["location_id"], name: "index_users_on_location_id", using: :btree
+  add_index "incomes", ["egg_id"], name: "index_incomes_on_egg_id", using: :btree
+  add_index "incomes", ["farm_id"], name: "index_incomes_on_farm_id", using: :btree
 
   create_table "weathers", force: :cascade do |t|
     t.integer  "high_temp"
     t.integer  "low_temp"
     t.integer  "wind_speed"
+    t.time     "sunrise"
+    t.time     "sunset"
     t.integer  "precipitation"
-    t.integer  "sunrise"
-    t.integer  "sunset"
-    t.integer  "location_id"
+    t.integer  "farm_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "weathers", ["location_id"], name: "index_weathers_on_location_id", using: :btree
+  add_index "weathers", ["farm_id"], name: "index_weathers_on_farm_id", using: :btree
 
-  add_foreign_key "breeds", "animals"
+  add_foreign_key "animals", "farms"
   add_foreign_key "eggs", "animals"
-  add_foreign_key "eggs", "incomes"
   add_foreign_key "expenses", "farms"
+  add_foreign_key "incomes", "eggs"
   add_foreign_key "incomes", "farms"
-  add_foreign_key "users", "locations"
-  add_foreign_key "weathers", "locations"
+  add_foreign_key "weathers", "farms"
 end
