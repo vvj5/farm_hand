@@ -28,15 +28,19 @@ text-align: center;
 }
 
 .hero {
-  background-image: image-url('eggs.jpg');
+  background-image: image-url('egg2.jpg');
   height: 600px;
   background-repeat: none;
   background-attachment: fixed;
   background-size: 100%;
-  background-position: middle;
+  background-position: bottom;
   // opacity: 0.4;
 }
 
 .transit {
   opacity: 0.4;
+}
+
+.sample-graph {
+  max-width: 600px;
 }
