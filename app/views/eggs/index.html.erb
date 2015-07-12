@@ -8,77 +8,95 @@
     <h4><span class="bolder"><span class="whiteit">Let's Count Some Eggs!</span></span></h4>
   </div>
   </div>
+  </div>
 
     <div class="container">
     <div class="row">
+    <div class="col s1">.</div>
     <div class="col s6">
-      <h6>Laid By</h6>
-        <form action="1">
-          <p>
-            <input name="group1" type="radio" id="chicken" />
-            <label for="chicken">Chicken</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="duck" />
-            <label for="duck">Duck</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="goose" />
-            <label for="goose">Goose</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="turkey" />
-            <label for="turkey">Turkey</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="guinea" />
-            <label for="guinea">Guinea Hen</label>
-          </p>
-        </form>
-      </div>
-
-    <div class="col s6">
-    <h6>Egg Color</h6>
-     <form action="#">
+      <form action="/eggs" method="post">
+       <h5>Laid By</h5>
         <p>
-          <input name="color" type="radio" id="brown" />
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="chicken" name="animal[name]" type="radio" value="chicken" />
+          <label for="chicken">Chicken</label>
+        </p>
+        <p>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="duck" name="animal[name]" type="radio" value="duck" />
+          <label for="duck">Duck</label>
+        </p>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+           <input id="goose" name="animal[name]" type="radio" value="goose" />
+          <label for="goose">Goose</label>
+        <p>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="turkey" name="animal[name]" type="radio" value="turkey" />
+          <label for="turkey">Turkey</label>
+        </p>
+        <p>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="guinea_hen" name="animal[name]" type="radio" value="guinea_hen" />
+          <label for="guinea_hen">Guinea Hen</label>
+        </p>
+        <!-- </form> -->
+    </div>
+
+    <div class="col s5">
+     <!-- <form action="/eggs" method="post"> -->
+        <h5>Egg Color</h5>
+        <p>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="brown" name="egg[color]" type="radio" value="brown" />
           <label for="brown">Brown</label>
         </p>
         <p>
-          <input name="color" type="radio" id="white" />
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="white" name="egg[color]" type="radio" value="white" />
           <label for="white">White</label>
         </p>
         <p>
-          <input name="color" type="radio" id="blue" />
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="blue" name="egg[color]" type="radio" value="blue" />
           <label for="blue">Blue</label>
         </p>
         <p>
-          <input name="color" type="radio" id="dark_brown" />
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="dark_brown" name="egg[color]" type="radio" value="dark_brown" />
           <label for="dark_brown">Dark Brown</label>
         </p>
         <p>
-          <input name="color" type="radio" id="speckled" />
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input id="speckled" name="egg[color]" type="radio" value="speckled" />
           <label for="speckled">Speckled</label>
         </p>
-      </form>
+        <!-- </form> -->
     </div>
-  </div>
 
-
-            <div class="container">
-            <div class="row">
-            <div class="input-field col s12">
-              <i class="material-icons prefix">group_work</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Egg Quantity</label>
-            </div>
-            </div>
-            </div>
-    </div>
-  </div>
-</div>
-</div>
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="container">
+        <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">group_work</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Egg Quantity</label>
+        </div>
+        </div>
+        </div>
 
 <br>
 
+      <div class="row">
+        <div class="col s3">.</div>
+        <div class="input-field col s3">
+          <input type="submit" value="Submit">
+        </div>
+      </div>
 
+
+  </form>
+<br>
+<br>
+</div>
+    </div>
+    </div>

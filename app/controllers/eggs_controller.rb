@@ -1,4 +1,5 @@
 class EggsController < ApplicationController
+skip_before_action :verify_authenticity_token
   before_action :set_egg, only: [:show, :edit, :update, :destroy]
 
   # GET /eggs
@@ -17,10 +18,6 @@ class EggsController < ApplicationController
     @egg = Egg.new
   end
 
-  # GET /eggs/1/edit
-  def edit
-  end
-
   # POST /eggs
   # POST /eggs.json
   def create
@@ -32,20 +29,6 @@ class EggsController < ApplicationController
         format.json { render :show, status: :created, location: @egg }
       else
         format.html { render :new }
-        format.json { render json: @egg.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /eggs/1
-  # PATCH/PUT /eggs/1.json
-  def update
-    respond_to do |format|
-      if @egg.update(egg_params)
-        format.html { redirect_to @egg, notice: 'Egg was successfully updated.' }
-        format.json { render :show, status: :ok, location: @egg }
-      else
-        format.html { render :edit }
         format.json { render json: @egg.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +52,6 @@ class EggsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def egg_params
-      params.require(:egg).permit(:id, :color_id, :price, :Animal_id, :Income_id)
+      params.require(:egg).permit(:color, :quantity, :animal_id)
     end
 end

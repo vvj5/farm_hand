@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :locations
-  resources :weathers
-  resources :expenses
-  resources :incomes
-  resources :breeds
-  resources :eggs
-  resources :animals
-  resources :farms
+            devise_for :users
+            resources :users
+            resources :locations
+            resources :weathers
+            resources :expenses
+            resources :incomes
+            resources :breeds
+            resources :eggs
+            resources :animals
+            resources :farms
 
-  root 'users#index'
+
+  root 'farms#index'
 
 end
+

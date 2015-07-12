@@ -4,4 +4,5 @@ class Farm < ActiveRecord::Base
   has_many :animals
   has_many :eggs, through: :animals
   has_many :weathers
+  has_many :users
 end

@@ -17,23 +17,28 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+
     </head>
 
     <body class="light-green lighten-3">
 
-    <div id="wrapper">
+    <!-- <div id="wrapper"> -->
       <div id="header">
       <%= render "layouts/header" %>
       </div>
 
-      <div id="content">
+
       <%= yield %>
-      </div>
+
 
       <div id="page-footer">
       <%= render "layouts/footer" %>
       </div>
-    </div>
+
+
+      <p class="notice"><%= notice %></p>
+
+      <p class="alert"><%= alert %></p>
 
 <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

@@ -1,143 +1,41 @@
+<div class="hero">
 <br>
 
 <div class="container white z-depth-1">
-<div class="center-align">
+
+  <div class="center-align">
+  <div class="row">
+  <div class="col s12 #eeeeee z-depth-1">
+    <h4><span class="bolder"><span class="greenit">WELCOME TO FARM HAND!</span></span></h4>
+  </div>
+  </div>
+
+  <br>
+  <h6>
+  <span class="greenit">
+  What do you want to work on?
+  </span>
+  </span>
+  </h6>
+  <br>
 
   <div class="row">
-  <div class="col s12 black z-depth-1">
-    <h4><span class="bolder"><span class="whiteit">Analyze Data and Trends</span></span></h4>
+    <a href="eggs.html" class="waves-effect orange btn-large"><i class="material-icons left">group_work</i>Eggs</a>
+
+    <a href="animals.html" class="waves-effect brown btn-large"><i class="material-icons left">assignment</i>Animals</a>
   </div>
+
+  <div class="row">
+  <a href="incomes" class="waves-effect light-blue btn-large"><i class="material-icons left">trending_up</i>Income</a>
+
+  <a href="expenses" class="waves-effect red btn-large"><i class="material-icons left">trending_down</i>Expense</a>
   </div>
 
-<br>
-data visualizations go here
-<%= image_tag("graph_sample.png", :alt => "Sample Graph", :class => "sample-graph") %>
-<br>
-</div>
-
-<div class="container">
-<br>
-
-    <div class="row col s12">
-
-   <!--  <div class="col s1">
-    .
-    </div> -->
-
-    <div class="col s3">
-      <h6>Animal</h6>
-        <form action="1">
-          <p>
-            <input name="group1" type="radio" id="chicken" />
-            <label for="chicken">Chicken</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="duck" />
-            <label for="duck">Duck</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="goose" />
-            <label for="goose">Goose</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="turkey" />
-            <label for="turkey">Turkey</label>
-          </p>
-        </form>
-      </div>
-
-    <div class="col s3">
-    <h6>Breed</h6>
-     <form action="2">
-        <p>
-          <input name="group1" type="radio" id="guinea" />
-          <label for="guinea">Guinea Hen</label>
-        </p>
-        <p>
-          <input name="color" type="radio" id="brown" />
-          <label for="brown">Brown</label>
-        </p>
-        <p>
-          <input name="color" type="radio" id="white" />
-          <label for="white">White</label>
-        </p>
-      </form>
-    </div>
-
-    <div class="col s2">
-    <h6>Income</h6>
-     <form action="3">
-        <p>
-          <input name="color" type="radio" id="blue" />
-          <label for="blue">Brown</label>
-        </p>
-        <p>
-          <input name="color" type="radio" id="blue" />
-          <label for="blue">Blue</label>
-        </p>
-    </form>
-    <h6>Expenses</h6>
-     <form action="3">
-        <p>
-          <input name="color" type="radio" id="blue" />
-          <label for="blue">Blue</label>
-        </p>
-      </form>
-    </div>
-
- <div class="col s2">
-    <h6>Income</h6>
-     <form action="3">
-        <p>
-          <input name="color" type="radio" id="blue" />
-          <label for="blue">Blue</label>
-        </p>
-    </form>
-    <h6>Expenses</h6>
-     <form action="3">
-        <p>
-          <input name="color" type="radio" id="blue" />
-          <label for="blue">Blue</label>
-        </p>
-      </form>
-    </div>
-
-
-</div>
-</div>
-
-<div class="container">
-<table>
-  <thead>
-    <tr>
-      <th>Animal</th>
-      <th>Income</th>
-      <th>Expense</th>
-      <th>Weather</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @farms.each do |farm| %>
-      <tr>
-        <td><%= farm.animal_id %></td>
-        <td><%= farm.income_id %></td>
-        <td><%= farm.expense_id %></td>
-        <td><%= farm.weather_id %></td>
-        <td><%= link_to 'Show', farm %></td>
-        <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
-        <td><%= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-
-<%= link_to 'New Farm', new_farm_path %>
-
+  <div class="row">
+    <a href="analyze.html" class="waves-effect grey btn-large"><i class="material-icons left">equalizer</i>Trends</a>
+  </div>
 <br>
 <br>
-</div>
+
 </div>
 </div>
