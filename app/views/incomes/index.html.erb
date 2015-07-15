@@ -1,45 +1,45 @@
 <br>
-
 <div class="container white z-depth-1">
-<div class="center-align">
-
-  <div class="row">
-  <div class="col s12 light-blue z-depth-1">
-    <h4><span class="bolder"><span class="whiteit">Enter Income</span></span></h4>
-  </div>
-  </div>
-
-    <div class="container">
+  <div class="center-align">
     <div class="row">
-    <div class="col s6">
-      <h6><span class="bolder">Laid By</span></h6>
-        <form action="1">
-          <p>
-            <input name="group1" type="radio" id="chicken" />
-            <label for="chicken">Chicken</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="duck" />
-            <label for="duck">Duck</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="goose" />
-            <label for="goose">Goose</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="turkey" />
-            <label for="turkey">Turkey</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="guinea" />
-            <label for="guinea">Guinea Hen</label>
-          </p>
-        </form>
+      <div class="col s12 light-blue z-depth-1">
+        <span class="whiteit-title">Enter Income</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- laid by column -->
+    <div class="container">
+      <div class="row">
+        <div class="make-invisible col s2">.</div>
+          <div class="col s5">
+            <span class="blackit-sub">Laid By</span>
+              <form action="1">
+              <p>
+                <input name="group1" type="radio" id="chicken" />
+                <label for="chicken">Chicken</label>
+              </p>
+              <p>
+                <input name="group1" type="radio" id="duck" />
+                <label for="duck">Duck</label>
+              </p>
+              <p>
+                <input name="group1" type="radio" id="goose" />
+                <label for="goose">Goose</label>
+              </p>
+              <p>
+                <input name="group1" type="radio" id="turkey" />
+                <label for="turkey">Turkey</label>
+              </p>
+              <p>
+                <input name="group1" type="radio" id="guinea" />
+                <label for="guinea">Guinea Hen</label>
+              </p>
       </div>
 
-    <div class="col s6">
-    <h6><span class="bolder">Egg Color</span></h6>
-     <form action="#">
+    <!-- egg color column -->
+    <div class="col s5">
+    <span class="blackit-sub">Egg Color</span>
         <p>
           <input name="color" type="radio" id="brown" />
           <label for="brown">Brown</label>
@@ -60,42 +60,59 @@
           <input name="color" type="radio" id="speckled" />
           <label for="speckled">Speckled</label>
         </p>
+    </div>
+  </div>
+
+    <div class="row">
+
+    <!-- column adjust row -->
+    <div class="col s2">.</div>
+
+    <!-- egg quantity -->
+    <div class="input-field col s4">
+      <i class="material-icons prefix"><%= image_tag 'Two_Eggs_24.png' %></i>
+        <input id="quantity" type="number" class="validate">
+        <label for="quantity">Egg Quantity</label>
+    </div>
+
+    <!-- sale amount -->
+    <div class="input-field col s4">
+      <i class="material-icons prefix"><%= image_tag 'Improve_incomes_24.png' %></i>
+        <input id="incomes" type="number" class="validate">
+          <label for="incomes">Sale Amount</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- submit button -->
+      <div class="row">
+        <div class="col s5">.</div>
+          <div class="input-field col s3">
+            <%= submit_tag("SUBMIT") %>
+          </div>
+        </div>
       </form>
-    </div>
+
+    <br>
+    <br>
+
   </div>
-
-            <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">group_work</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Egg Quantity</label>
-            </div>
-
-            <div class="input-field col s6">
-              <i class="material-icons prefix">group_work</i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Sale Amount</label>
-            </div>
-            </div>
-            </div>
-
-    </div>
   </div>
 </div>
 </div>
 
 <br>
 <br>
+
+  <!-- past incomes table -->
 <div class="container white z-depth-1">
 <div class="center-align">
-
   <div class="row">
   <div class="col s12 light-blue z-depth-1">
     <h4><span class="bolder"><span class="whiteit">Past Income Transactions</span></span></h4>
   </div>
   </div>
 <div class="container">
-
   <table class="bordered hoverable responsive">
     <thead>
       <tr>
@@ -106,7 +123,6 @@
         <th>Income Amount</th>
       </tr>
     </thead>
-
     <tbody>
       <% @incomes.each do |income| %>
         <tr>
@@ -122,11 +138,9 @@
     </tbody>
   </table>
 </div>
-  <%= link_to 'New Income', new_income_path %>
-    </div>
-    </div>
-    </div>
-
+</div>
+</div>
+</div>
 <br>
 <br>
 

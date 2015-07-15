@@ -5,6 +5,7 @@ class AnimalsController < ApplicationController
   # GET /animals.json
   def index
     @animals = Animal.all
+    # @animal_count = Animal.where(name: Animal.name).count
   end
 
   # GET /animals/1
@@ -28,7 +29,7 @@ class AnimalsController < ApplicationController
 
     respond_to do |format|
       if @animal.save
-        format.html { redirect_to @animal, notice: 'Animal was successfully created.' }
+        format.html { redirect_to :back, notice: 'Animal was successfully created.' }
         format.json { render :show, status: :created, location: @animal }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class AnimalsController < ApplicationController
   def update
     respond_to do |format|
       if @animal.update(animal_params)
-        format.html { redirect_to @animal, notice: 'Animal was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Animal was successfully updated.' }
         format.json { render :show, status: :ok, location: @animal }
       else
         format.html { render :edit }

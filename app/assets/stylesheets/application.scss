@@ -15,16 +15,48 @@ color: white;
 text-align: center;
 }
 
+.make-invisible {
+  color: white;
+}
+
+.inventory-box {
+  padding: 40px;
+}
+
+.nudgeit {
+  margin-left: 40px;
+}
+
 .bolder {
+  font-weight: bold;
+}
+
+.bigger-bolder {
+  font-size: 32px;
   font-weight: bold;
 }
 
 .greenit {
   color: #8CC252;
+  font-weight: bold;
 }
 
-.whiteit {
+.whiteit-title {
   color: white;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.whiteit-sub {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.blackit-sub {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .hero {
@@ -43,4 +75,15 @@ text-align: center;
 
 .sample-graph {
   max-width: 600px;
+}
+
+.logo-format {
+  margin-left: 40px;
+  font-size: 24px;
+}
+
+.farm-nav {
+  height: 64px;
+  width: 100%;
+  background-color: light-green;
 }

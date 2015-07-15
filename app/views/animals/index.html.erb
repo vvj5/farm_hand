@@ -1,55 +1,48 @@
 <br>
-
-<div class="container white z-depth-1">
-<div class="center-align">
-
-  <div class="row">
-  <div class="col s12 brown z-depth-1">
-  <h4>
-  <span class="bolder">
-  <span class="greenit">
-  Animals on the Farm
-  </span>
-  </span>
-  </h4>
+  <div class="container white z-depth-1">
+    <div class="center-align">
+      <div class="row">
+        <div class="col s12 brown z-depth-1">
+          <h4><span class="greenit">Animals on the Farm</span></h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="inventory-box">
+        <div class="col s12">
+          <h6><span class="bolder">Current Flock Types and Counts</span></h6>
+            <table class="bordered responsive">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Breed</th>
+                  <th>Egg Color</th>
+                  <th>Quantity</th>
+                  <th>Add</th>
+                  <th>Subtract</th>
+                  <th>Remove Flock</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @animals.each do |animal| %>
+                  <tr>
+                    <td><%= animal.id %></td>
+                    <td><%= animal.name %></td>
+                    <td><%= animal.breed %></td>
+                    <td><%= animal.breed %></td>
+                    <td><%= Animal.where(name: animal.name).count %></td>
+                    <td><button class="btn light-green">
+                        <%= link_to '+1', edit_animal_path(animal) %></button></td>
+                    <td><button class="btn orange darken-2"><%= link_to '-1', edit_animal_path(animal) %></button></td>
+                    <td><button class="btn red"><%= link_to 'Remove Flock', animal, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
   </div>
-  </div>
+  <br>
+  <br>
 
-    <div class="row">
-    <div class="col s12">
-    <h6>Current Flock Types and Counts</h6>
-
-<div class="container">
-
-  <table class="bordered hoverable responsive">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Breed</th>
-        <th>Egg</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @animals.each do |animal| %>
-        <tr>
-          <td><%= animal.id %></td>
-          <td><%= animal.name %></td>
-          <td><%= animal.breed_id %></td>
-          <td><%= animal.egg_id %></td>
-          <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-          <td><%= link_to 'Remove', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-  <%= link_to 'New Animal', new_animal_path %>
-    </div>
-    </div>
-    </div>
-</div>
-
-<br>
-<br>
