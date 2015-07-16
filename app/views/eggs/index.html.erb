@@ -10,82 +10,90 @@
   </div>
 
   <div class="container">
-    <div class="row">
-      <span class="make-invisible col s1">.</span>
-        <form action="/eggs" method="post">
-          <div class="col s6">
-            <span class="blackit-sub">Laid By</span>
-
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                <input id="chicken" name="egg[animal_id]" type="radio" value="1" />
-                  <label for="chicken">Chicken</label></p>
-
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="duck" name="egg[animal_id]" type="radio" value="2" />
-                    <label for="duck">Duck</label></p>
-
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="goose" name="egg[animal_id]" type="radio" value="3" />
-                    <label for="goose">Goose</label></p>
-
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="turkey" name="egg[animal_id]" type="radio" value="4" />
-                    <label for="turkey">Turkey</label></p>
-
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="guinea_hen" name="egg[animal_id]" type="radio" value="5" />
-                    <label for="guinea_hen">Guinea Hen</label></p>
-          </div>
-
+    <br>
+      <div class="row">
+        <div class="make-invisible col s2">.</div>
           <div class="col s5">
-            <span class="blackit-sub">Egg Color</span>
+            <span class="blackit-sub">Laid By</span>
+              <form action="/eggs" method="post">
 
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="brown" name="egg[color]" type="radio" value="brown" />
-                    <label for="brown">Brown</label></p>
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <input id="chicken" name="egg[animal_id]" type="radio" value="1" />
+                  <label for="chicken">Chicken</label>
+                </p>
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <input id="duck" name="egg[animal_id]" type="radio" value="2" />
+                  <label for="duck">Duck</label>
+                </p>
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <input id="goose" name="egg[animal_id]" type="radio" value="3" />
+                  <label for="goose">Goose</label>
+                </p>
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <input id="turkey" name="egg[animal_id]" type="radio" value="4" />
+                  <label for="turkey">Turkey</label>
+                </p>
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <input id="guinea" name="egg[animal_id]" type="radio" value="5" />
+                  <label for="guinea">Guinea Hen</label>
+                </p>
+        </div>
 
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="white" name="egg[color]" type="radio" value="white" />
-                    <label for="white">White</label></p>
+        <!-- egg color column -->
+        <div class="col s5">
+          <span class="blackit-sub">Egg Color</span>
 
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="blue" name="egg[color]" type="radio" value="blue" />
-                    <label for="blue">Blue</label></p>
+            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <input id="brown" name="egg[color]" type="radio" value="brown" />
+                  <label for="brown">Brown</label></p>
 
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="dark_brown" name="egg[color]" type="radio" value="dark_brown" />
-                    <label for="dark_brown">Dark Brown</label></p>
+            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <input id="white" name="egg[color]" type="radio" value="white" />
+                  <label for="white">White</label></p>
 
-              <p><input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input id="speckled" name="egg[color]" type="radio" value="speckled" />
-                    <label for="speckled">Speckled</label></p>
-          </div>
+            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <input id="blue" name="egg[color]" type="radio" value="blue" />
+                  <label for="blue">Blue</label></p>
 
-            <div class="container">
-              <div class="row">
-                <span class="make-invisible col s2">.</span>
-                  <div class="input-field col s5">
-                    <i class="material-icons prefix"><%= image_tag 'Two_Eggs_24.png' %></i>
-                      <input id="eggs" type="number" class="validate">
-                        <label for="eggs" data-error="error" data-success="egg count entered!">Egg Quantity</label>
-                        <br>
-                        <br>
-                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                        <%= submit_tag("SUBMIT") %>
-                  </div>
+            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <input id="dark_brown" name="egg[color]" type="radio" value="dark_brown" />
+                  <label for="dark_brown">Dark Brown</label></p>
+
+            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <input id="speckled" name="egg[color]" type="radio" value="speckled" />
+                  <label for="speckled">Speckled</label></p>
+        </div>
+      </div>
+
+          <div class="row">
+            <div class="centerize-field">
+              <div class="input-field col s12">
+                <input id="eggs" type="number" class="validate">
+                <label for="eggs">Quantity</label>
               </div>
             </div>
+          </div>
+          <div class="row">
+            <div class="centerize-field">
+              <div class="input-field col s12">
+                <button class="btn waves-effect waves-orange validate" type="submit" name="action">Submit</button>
+              </div>
+            </div>
+          </div>
         </form>
+        <br>
+        <br>
       </div>
     </div>
-    <br>
   </div>
-  <br>
+</div>
+<br>
+<br>
   <div class="container white z-depth-1">
     <div class="center-align">
       <div class="row">
         <div class="col s12 orange z-depth-1">
-              <span class="whiteit-title">Eggs Currently In Inventory</span>
+          <span class="whiteit-title">Eggs Currently In Inventory</span>
         </div>
       </div>
     </div>
@@ -124,11 +132,11 @@
                 <td><button class="btn red">
                   <%= link_to 'Remove Eggs', egg, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
 
-                <% end %>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

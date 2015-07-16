@@ -15,8 +15,26 @@ color: white;
 text-align: center;
 }
 
+.hero {
+  background-image: image-url('eggs5.jpg');
+  background-position: center;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.make-semi-transparent {
+  background-color: RGBA(255, 255, 255, .7)
+}
+
 .make-invisible {
   color: white;
+}
+
+.centerize-field {
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .inventory-box {
@@ -27,46 +45,71 @@ text-align: center;
   margin-left: 40px;
 }
 
-.bolder {
-  font-weight: bold;
-}
-
-.bigger-bolder {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.greenit {
+.greenit-title {
   color: #8CC252;
   font-weight: bold;
+  text-align: center;
+  font-size: 32px;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width : 360 + ($i * $interval-size)) {
+      font-size: 1.2rem * (1 + (.02 * $i));
+    }
+    $i: $i + 1;}
+}
+
+.greenit-sub {
+  color: #8CC252;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
 }
 
 .whiteit-title {
   color: white;
   font-weight: bold;
   font-size: 32px;
-}
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width : 360 + ($i * $interval-size)) {
+      font-size: 1.2rem * (1 + (.02 * $i));
+    }
+    $i: $i + 1;}
+  }
 
 .whiteit-sub {
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.blackit-title {
+  color: black;
+  font-weight: bold;
+  font-size: 32px;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width : 360 + ($i * $interval-size)) {
+      font-size: 1.2rem * (1 + (.02 * $i));
+    }
+    $i: $i + 1;}
 }
 
 .blackit-sub {
   color: black;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+  text-align: center;
 }
 
-.hero {
-  background-image: image-url('egg2.jpg');
-  height: 600px;
-  background-repeat: none;
-  background-attachment: fixed;
-  background-size: 100%;
-  background-position: bottom;
-  // opacity: 0.4;
+.bottom-text {
+  background-color: #8CC252;
+  color: white;
+  padding: 10px;
+  height: 40px;
+  font-size: 12px;
+  text-align: center;
 }
 
 .transit {

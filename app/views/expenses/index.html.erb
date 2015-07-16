@@ -1,102 +1,91 @@
 <br>
-
 <div class="container white z-depth-1">
-<div class="center-align">
-
-  <div class="row">
-  <div class="col s12 red z-depth-1">
-    <h4><span class="bolder"><span class="whiteit">Enter Expense</span></span></h4>
-  </div>
-  </div>
-
-    <div class="container">
+  <div class="center-align">
     <div class="row">
-    <div class="col s6">
-      <h6><span class="bolder">Item</span></h6>
-        <form action="1">
-          <p>
-            <input name="group1" type="radio" id="Feed" />
-            <label for="Feed">Feed</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="Cartons" />
-            <label for="Cartons">Cartons</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="Oyster Shell" />
-            <label for="Oyster Shell">Oyster Shell</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="Medicine" />
-            <label for="Medicine">Medicine</label>
-          </p>
-          <p>
-            <input name="group1" type="radio" id="Other" />
-            <label for="Other">Other</label>
-          </p>
-        </form>
+      <div class="col s12 red z-depth-1">
+        <span class="whiteit-title">Enter Expense</span>
       </div>
-
-            <div class="input-field col s6">
-
-              <i class="material-icons prefix"><%= image_tag 'expense_24.png' %></i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Expense Amount</label>
-            </div>
-            <div class="row">
-              <div class="col s4">.</div>
-                <div class="input-field col s3">
-                   <%= submit_tag("SUBMIT") %>
-                </div>
-              </div>
-            </div>
-            </div>
-            <br>
-
     </div>
   </div>
+  <br>
+    <div class="container">
+      <div class="row">
+        <span class="make-invisible col s2">.</span>
+          <div class="col s6">
+            <span class="blackit-sub">Item</span>
+              <form action="1">
 
-<br>
-<br>
-<div class="container white z-depth-1">
-<div class="center-align">
 
-  <div class="row">
-  <div class="col s12 red z-depth-1">
-    <h4><span class="bolder"><span class="whiteit">Past Expense Transactions</span></span></h4>
-  </div>
-  </div>
-<div class="container">
 
-  <table class="bordered hoverable responsive">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Item</th>
-        <th>Expense Amount</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
+               <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"><input id="feed" name="expense[name]" type="radio" value="feed" /><label for="feed">Feed</label></p>
 
-    <tbody>
-      <% @expenses.each do |expense| %>
-        <tr>
-          <td><%= expense.created_at %></td>
-          <td><%= expense.title %></td>
-          <td><%= expense.amount %></td>
-          <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-          <td><%= link_to 'Remove', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"><input id="cartons" name="expense[name]" type="radio" value="cartons" /><label for="cartons">Cartons</label></p>
+
+
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"><input id="oystershell" name="expense[name]" type="radio" value="oystershell" /><label for="oystershell">Oyster Shell</label></p>
+
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"><input id="medicine" name="expense[medicine]" type="radio" value="medicine" /><label for="medicine">Medicine</label></p>
+
+                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"><input id="other" name="expense[other]" type="radio" value="other" /><label for="other">Other</label></p>
+
+              </form>
+          </div>
+
+          <!-- EXPENSE AMOUNT FIELD -->
+          <div class="input-field col s2">
+            <input id="amount" type="number" class="validate">
+            <label for="amount">$ Amount</label>
+          </div>
+
+          <!-- SUBMIT BUTTON -->
+          <div class="row">
+            <button class="btn waves-effect red validate" type="submit" name="action">Submit</button>
+            <span class="make-invisible col s2">.</span>
+          </div>
+      </div>
+    </div>
+    <br>
 </div>
-  <%= link_to 'New Expense', new_expense_path %>
-    </div>
-    </div>
-    </div>
+<br>
+<br>
 
+<!-- PAST EXPENSE TRANSACTIONS -->
+<div class="container white z-depth-1">
+  <div class="center-align">
+    <div class="row">
+      <div class="col s12 red z-depth-1">
+        <span class="whiteit-title">Past Expense Transactions</span>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <table class="bordered responsive">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Item</th>
+          <th>Amount</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @expenses.each do |expense| %>
+          <tr>
+            <td><%= expense.created_at %></td>
+            <td><%= expense.title %></td>
+            <td><%= expense.amount %></td>
+            <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+            <td><%= link_to 'Remove', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+<%= link_to 'New Expense', new_expense_path %>
+</div>
 <br>
 <br>
 
