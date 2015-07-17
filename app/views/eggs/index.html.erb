@@ -10,85 +10,123 @@
   </div>
 
   <div class="container">
-    <br>
-      <div class="row">
-        <div class="make-invisible col s2">.</div>
-          <div class="col s5">
-            <span class="blackit-sub">Laid By</span>
-              <form action="/eggs" method="post">
+  <br>
+  <br>
+    <div class="row">
 
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="chicken" name="egg[animal_id]" type="radio" value="1" />
-                  <label for="chicken">Chicken</label>
-                </p>
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="duck" name="egg[animal_id]" type="radio" value="2" />
-                  <label for="duck">Duck</label>
-                </p>
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="goose" name="egg[animal_id]" type="radio" value="3" />
-                  <label for="goose">Goose</label>
-                </p>
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="turkey" name="egg[animal_id]" type="radio" value="4" />
-                  <label for="turkey">Turkey</label>
-                </p>
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="guinea" name="egg[animal_id]" type="radio" value="5" />
-                  <label for="guinea">Guinea Hen</label>
-                </p>
-        </div>
+    <!-- SPACER COLUMN -->
+      <div class="col s3"><span class="make-invisible">.</span></div>
 
-        <!-- egg color column -->
-        <div class="col s5">
-          <span class="blackit-sub">Egg Color</span>
+          <!-- ENTRY FIELDS -->
+          <div class="col s6">
+            <form action="/eggs" method="post">
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="chickenltbrnegg" name="inventory[:id]" type="number" class="validate">
+                    <label for="chickenltbrnegg">Chicken Eggs: Light Brown</label>
+                  </div>
+                </div>
+              <br>
+              <br>
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="chickendrkbrnegg" name="inventory[:id]" type="number" class="validate">
+                    <label for="chickendrkbrnegg">Chicken Eggs: Dark Brown</label>
+                  </div>
+                </div>
+              <br>
+              <br>
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="chickenwhiteegg" name="inventory[:id]" type="number" class="validate">
+                    <label for="chickenwhiteegg">Chicken Eggs: White</label>
+                  </div>
+                </div>
+              <br>
+              <br>
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="chickenblugrnegg" name="inventory[:id]" type="number" class="validate">
+                    <label for="chickenblugrnegg">Chicken Eggs: Blue/Green</label>
+                  </div>
+                </div>
+              <br>
+              <br>
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="duckegg" name="inventory[:id]" type="number" class="validate">
+                    <label for="duckegg">Duck Eggs</label>
+                  </div>
+                </div>
+              <br>
+              <br>
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="gooseegg" name="inventory[:id]" type="number" class="validate">
+                    <label for="gooseegg">Goose Eggs</label>
+                  </div>
+                </div>
+              <br>
+              <br>
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="turkeyegg" name="inventory[:id]" type="number" class="validate">
+                    <label for="turkeyegg">Turkey Eggs</label>
+                  </div>
+                </div>
+              <br>
+              <br>
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="guineaeggs" name="inventory[:id]" type="number" class="validate">
+                      <label for="guineaeggs">Guinea Eggs</label>
+                  </div>
+                </div>
+              <br>
+              <br>
+              <div class="row">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <div class="input-field col s12">
+                    <input value="number" placeholder="egg count here" id="quaileggs" name="inventory[:id]" type="number" class="validate">
+                      <label for="quaileggs">Quail Eggs</label>
+                  </div>
+                </div>
+              </form>
+            <br>
+          </div>
 
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="brown" name="egg[color]" type="radio" value="brown" />
-                  <label for="brown">Brown</label></p>
+        <!-- SPACER COLUMN -->
+        <div class="col s3"><span class="make-invisible">.</span></div>
 
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="white" name="egg[color]" type="radio" value="white" />
-                  <label for="white">White</label></p>
-
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="blue" name="egg[color]" type="radio" value="blue" />
-                  <label for="blue">Blue</label></p>
-
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="dark_brown" name="egg[color]" type="radio" value="dark_brown" />
-                  <label for="dark_brown">Dark Brown</label></p>
-
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="speckled" name="egg[color]" type="radio" value="speckled" />
-                  <label for="speckled">Speckled</label></p>
-        </div>
-      </div>
-
-          <div class="row">
-            <div class="centerize-field">
-              <div class="input-field col s12">
-                <input id="eggs" type="number" class="validate">
-                <label for="eggs">Quantity</label>
-              </div>
+        <!-- SUBMIT BUTTON -->
+        <div class="row">
+          <div class="centerize-field">
+            <div class="input-field col s12">
+              <button class="btn waves-effect waves-orange" type="submit" name="action">Submit</button>
             </div>
           </div>
-          <div class="row">
-            <div class="centerize-field">
-              <div class="input-field col s12">
-                <button class="btn waves-effect waves-orange validate" type="submit" name="action">Submit</button>
-              </div>
-            </div>
-          </div>
-        </form>
-        <br>
+        </div>
         <br>
       </div>
+
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
     </div>
   </div>
-</div>
-<br>
-<br>
+
+
+<!-- EGG INVENTORY -->
   <div class="container white z-depth-1">
     <div class="center-align">
       <div class="row">
@@ -105,7 +143,6 @@
               <tr>
                 <th>Id</th>
                 <th>Laid By</th>
-                <th>Egg Color</th>
                 <th>Quantity</th>
                 <th>Add</th>
                 <th>Subtract</th>
@@ -117,7 +154,6 @@
               <tr>
                 <td><%= egg.id %></td>
                 <td><%= egg.animal_id %></td>
-                <td><%= egg.color %></td>
                 <td><%= Egg.where(id: egg.id).count %></td>
 
                 <!-- ADD EGG BUTTON -->
@@ -142,3 +178,4 @@
 </div>
 <br>
 <br>
+

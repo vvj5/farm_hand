@@ -8,6 +8,11 @@ skip_before_action :verify_authenticity_token
     @egg = Egg.all
   end
 
+  # GET /eggs
+  def stock
+    @egg = Egg.all
+  end
+
 
   # POST /eggs
   def create

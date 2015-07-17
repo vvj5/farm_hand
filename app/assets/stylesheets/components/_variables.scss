@@ -45,12 +45,12 @@ $icons-font-path: "../font/material-design-icons/" !default;
 
 /*** Forms ***/
 // Text Inputs + Textarea
-$input-border-color: color("grey", "base") !default;
+$input-border-color: color("grey", "darken-3") !default;
 $input-bg-color: #fff !default;
 $input-error-color: $error-color !default;
 $input-success-color: $success-color !default;
 $input-focus-color: #8BC34A;
-$label-font-size: .8rem !default;
+$label-font-size: 1rem !default;
 $input-disabled-color: rgba(0,0,0, .26) !default;
 $input-disabled-solid-color: #BDBDBD !default;
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :inventories
             devise_for :users
             resources :users
             resources :locations
@@ -10,8 +11,6 @@ Rails.application.routes.draw do
             resources :animals
             resources :farms
             resources :trends
-
-patch '/eggs/:id', to: 'eggs#update'
 
   root 'farms#index'
 

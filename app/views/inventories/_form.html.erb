@@ -1,0 +1,61 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :chicken %><br>
+    <%= f.number_field :chicken %>
+  </div>
+  <div class="field">
+    <%= f.label :duck %><br>
+    <%= f.number_field :duck %>
+  </div>
+  <div class="field">
+    <%= f.label :goose %><br>
+    <%= f.number_field :goose %>
+  </div>
+  <div class="field">
+    <%= f.label :turkey %><br>
+    <%= f.number_field :turkey %>
+  </div>
+  <div class="field">
+    <%= f.label :guinea %><br>
+    <%= f.number_field :guinea %>
+  </div>
+  <div class="field">
+    <%= f.label :quail %><br>
+    <%= f.number_field :quail %>
+  </div>
+  <div class="field">
+    <%= f.label :brown %><br>
+    <%= f.number_field :brown %>
+  </div>
+  <div class="field">
+    <%= f.label :white %><br>
+    <%= f.number_field :white %>
+  </div>
+  <div class="field">
+    <%= f.label :blue %><br>
+    <%= f.number_field :blue %>
+  </div>
+  <div class="field">
+    <%= f.label :drkbrn %><br>
+    <%= f.number_field :drkbrn %>
+  </div>
+  <div class="field">
+    <%= f.label :speckled %><br>
+    <%= f.number_field :speckled %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

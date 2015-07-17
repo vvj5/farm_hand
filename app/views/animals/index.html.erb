@@ -15,8 +15,6 @@
                 <tr>
                   <th>Id</th>
                   <th>Name</th>
-                  <th>Breed</th>
-                  <th>Egg Color</th>
                   <th>Quantity</th>
                   <th>Add</th>
                   <th>Subtract</th>
@@ -28,8 +26,6 @@
                   <tr>
                     <td><%= animal.id %></td>
                     <td><%= animal.name %></td>
-                    <td><%= animal.breed %></td>
-                    <td><%= animal.breed %></td>
                     <td><%= Animal.where(name: animal.name).count %></td>
                     <td><button class="btn light-green">
                         <%= link_to '+1', edit_animal_path(animal) %></button></td>

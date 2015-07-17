@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chicken: 1
+  duck: 1
+  goose: 1
+  turkey: 1
+  guinea: 1
+  quail: 1
+  brown: 1
+  white: 1
+  blue: 1
+  drkbrn: 1
+  speckled: 1
+
+two:
+  chicken: 1
+  duck: 1
+  goose: 1
+  turkey: 1
+  guinea: 1
+  quail: 1
+  brown: 1
+  white: 1
+  blue: 1
+  drkbrn: 1
+  speckled: 1

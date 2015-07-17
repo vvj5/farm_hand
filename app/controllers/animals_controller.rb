@@ -26,40 +26,25 @@ class AnimalsController < ApplicationController
   # POST /animals.json
   def create
     @animal = Animal.new(animal_params)
-
-    respond_to do |format|
-      if @animal.save
-        format.html { redirect_to :back, notice: 'Animal was successfully created.' }
-        format.json { render :show, status: :created, location: @animal }
-      else
-        format.html { render :new }
-        format.json { render json: @animal.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = "New animal created"
+    redirect_to :back
   end
 
   # PATCH/PUT /animals/1
   # PATCH/PUT /animals/1.json
   def update
-    respond_to do |format|
-      if @animal.update(animal_params)
-        format.html { redirect_to :back, notice: 'Animal was successfully updated.' }
-        format.json { render :show, status: :ok, location: @animal }
-      else
-        format.html { render :edit }
-        format.json { render json: @animal.errors, status: :unprocessable_entity }
-      end
-    end
+    @animal.update(animal_params)
+    flash[:notice] = "One animal added"
+    redirect_to :back
   end
+
 
   # DELETE /animals/1
   # DELETE /animals/1.json
-  def remove
+  def destroy
     @animal.destroy
-    respond_to do |format|
-      format.html { redirect_to animals_url, notice: 'Animal was successfully removed.' }
-      format.json { head :no_content }
-    end
+    flash[:notice] = "Animal type removed."
+    redirect_to :back
   end
 
   private

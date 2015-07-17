@@ -4,6 +4,7 @@ class CreateAnimals < ActiveRecord::Migration
       t.string :name
       t.string :breed
       t.belongs_to :farm, index: true, foreign_key: true
+      t.belongs_to :inventory
 
       t.timestamps null: false
     end

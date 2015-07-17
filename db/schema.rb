@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710174348) do
+ActiveRecord::Schema.define(version: 20150716210802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,31 @@ ActiveRecord::Schema.define(version: 20150710174348) do
 
   add_index "incomes", ["egg_id"], name: "index_incomes_on_egg_id", using: :btree
   add_index "incomes", ["farm_id"], name: "index_incomes_on_farm_id", using: :btree
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer  "chickenltbrownlayer"
+    t.integer  "chickendrkbrnlayer"
+    t.integer  "chickenwhitelayer"
+    t.integer  "chickenblugrnlayer"
+    t.integer  "chickenbantamlayer"
+    t.integer  "duck"
+    t.integer  "goose"
+    t.integer  "turkey"
+    t.integer  "guinea"
+    t.integer  "quail"
+    t.integer  "chickenltbrownegg"
+    t.integer  "chickendrkbrnegg"
+    t.integer  "chickenwhiteegg"
+    t.integer  "chickenblugrnegg"
+    t.integer  "chickenbantamegg"
+    t.integer  "duckegg"
+    t.integer  "gooseegg"
+    t.integer  "turkeyegg"
+    t.integer  "guineaegg"
+    t.integer  "quailegg"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
