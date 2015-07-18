@@ -67,28 +67,28 @@ ActiveRecord::Schema.define(version: 20150716210802) do
   add_index "incomes", ["farm_id"], name: "index_incomes_on_farm_id", using: :btree
 
   create_table "inventories", force: :cascade do |t|
-    t.integer  "chickenltbrownlayer"
-    t.integer  "chickendrkbrnlayer"
-    t.integer  "chickenwhitelayer"
-    t.integer  "chickenblugrnlayer"
-    t.integer  "chickenbantamlayer"
-    t.integer  "duck"
-    t.integer  "goose"
-    t.integer  "turkey"
-    t.integer  "guinea"
-    t.integer  "quail"
-    t.integer  "chickenltbrownegg"
-    t.integer  "chickendrkbrnegg"
-    t.integer  "chickenwhiteegg"
-    t.integer  "chickenblugrnegg"
-    t.integer  "chickenbantamegg"
-    t.integer  "duckegg"
-    t.integer  "gooseegg"
-    t.integer  "turkeyegg"
-    t.integer  "guineaegg"
-    t.integer  "quailegg"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.integer  "chickenltbrownlayer", default: 0
+    t.integer  "chickendrkbrnlayer",  default: 0
+    t.integer  "chickenwhitelayer",   default: 0
+    t.integer  "chickenblugrnlayer",  default: 0
+    t.integer  "chickenbantamlayer",  default: 0
+    t.integer  "duck",                default: 0
+    t.integer  "goose",               default: 0
+    t.integer  "turkey",              default: 0
+    t.integer  "guinea",              default: 0
+    t.integer  "quail",               default: 0
+    t.integer  "chickenltbrownegg",   default: 0
+    t.integer  "chickendrkbrnegg",    default: 0
+    t.integer  "chickenwhiteegg",     default: 0
+    t.integer  "chickenblugrnegg",    default: 0
+    t.integer  "chickenbantamegg",    default: 0
+    t.integer  "duckegg",             default: 0
+    t.integer  "gooseegg",            default: 0
+    t.integer  "turkeyegg",           default: 0
+    t.integer  "guineaegg",           default: 0
+    t.integer  "quailegg",            default: 0
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "users", force: :cascade do |t|

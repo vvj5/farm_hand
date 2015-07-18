@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :inventories
             devise_for :users
             resources :users
             resources :locations
@@ -11,6 +10,8 @@ Rails.application.routes.draw do
             resources :animals
             resources :farms
             resources :trends
+            post 'inventories/increment', to: 'inventories#increment', as: "increment"
+            resources :inventories
 
   root 'farms#index'
 

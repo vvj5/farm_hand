@@ -12,57 +12,56 @@
   <% end %>
 
   <!-- EGGS -->
-<div class="input-field col s12 brown lighten-5">
-    <%= f.label "# Chicken Eggs: Light Brown" %><br>
+  <div class="input-field col s12 brown lighten-5">
+    <%= f.label "# Chicken Eggs: Light Brown" %>
     <%= f.number_field :chickenltbrownegg %>
   </div>
+
   <div class="input-field col s12 brown lighten-4">
-    <%= f.label "# Chicken Eggs: Dark Brown" %><br>
+    <%= f.label "# Chicken Eggs: Dark Brown" %>
     <%= f.number_field :chickendrkbrnegg %>
   </div>
+
   <div class="input-field col s12">
     <%= f.label "# Chicken: White" %><br>
     <%= f.number_field :chickenwhiteegg %>
   </div>
+
   <div class="input-field col s12 teal lighten-5">
-    <%= f.label "# Chicken Eggs: Blu/Grn" %><br>
+    <%= f.label "# Chicken Eggs: Blu/Grn" %>
     <%= f.number_field :chickenblugrnegg %>
   </div>
+
   <div class="input-field col s12">
-    <%= f.label "# Chicken Eggs: Bantam" %><br>
+    <%= f.label "# Chicken Eggs: Bantam" %>
     <%= f.number_field :chickenbantamegg %>
   </div>
+
   <div class="input-field col s12 green lighten-5">
-    <%= f.label "# Duck Eggs" %><br>
+    <%= f.label "# Duck Eggs" %>
     <%= f.number_field :duckegg %>
   </div>
+
   <div class="input-field col s12">
-    <%= f.label "# Goose Eggs" %><br>
+    <%= f.label "# Goose Eggs" %>
     <%= f.number_field :gooseegg %>
   </div>
+
   <div class="input-field col s12 orange lighten-5">
-    <%= f.label "# Turkey Eggs" %><br>
+    <%= f.label "# Turkey Eggs" %>
     <%= f.number_field :turkeyegg %>
   </div>
+
   <div class="input-field col s12 brown lighten-5">
-    <%= f.label "# Guinea Hen Eggs" %><br>
+    <%= f.label "# Guinea Hen Eggs" %>
     <%= f.number_field :guineaegg %>
   </div>
+
   <div class="input-field col s12 brown lighten-4">
-    <%= f.label "# Quail Eggs" %><br>
+    <%= f.label "# Quail Eggs" %>
     <%= f.number_field :quailegg %>
   </div>
 
-  <div class="row">
-    <div class="centerize-field">
-      <div class="actions">
-        <div class="input-field col s12">
-        <br>
-            <%= f.submit %>
-            <% end %>
-
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= f.submit 'enter count', :class => 'willbtn-submit' %>
+  <% end %>
 

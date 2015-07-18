@@ -1,4 +1,96 @@
 // shared styles
+.willbtn-submit {
+  width: 100%;
+  margin: 20;
+  border: none;
+  height: 40px;
+  padding: 10px;
+  color: white;
+  font-style: bold;
+  font-size: 16px;
+  background-color: $button-color;
+  text-align: center;
+  letter-spacing: .5px;
+
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($button-color, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+.willbtn-increment {
+  margin: 20;
+  border: none;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  color: white;
+  font-style: bold;
+  font-size: 16px;
+  background-color: #03A9F4;
+  text-align: center;
+  letter-spacing: .5px;
+
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(#03A9F4, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+.willbtn-decrement {
+  margin: 20;
+  border: none;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  color: white;
+  font-style: bold;
+  font-size: 16px;
+  background-color: #03A9F4;
+  text-align: center;
+  letter-spacing: .5px;
+
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(#03A9F4, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+.willbtn-delete {
+  margin: 20;
+  border: none;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  color: white;
+  font-style: bold;
+  font-size: 16px;
+  background-color: #F44336;
+  text-align: center;
+  letter-spacing: .5px;
+
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(#F44336, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
 .btn, .btn-flat {
   border: none;
   border-radius: 2px;

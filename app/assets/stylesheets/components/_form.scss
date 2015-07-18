@@ -123,19 +123,22 @@ textarea.materialize-textarea {
 .input-field {
   position: relative;
   margin-top: 1rem;
+  margin-bottom: 2rem;
+  border: solid 1px #eeeeee;
+  text-align: center;
 
   label {
     color: $input-border-color;
-    position: absolute;
+    // position: absolute;
     top: 0.8rem;
     left: $gutter-width / 2;
     font-size: 1rem;
     cursor: text;
-    @include transition(.2s ease-out);
+    // @include transition(.2s ease-out);
   }
   label.active {
     font-size: $label-font-size;
-    @include transform(translateY(-140%));
+    // @include transform(translateY(-140%));
   }
 
   // Prefix Icons

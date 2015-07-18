@@ -47,31 +47,27 @@
                 <th>Date</th>
                 <th>Egg Variety</th>
                 <th>Quantity</th>
-                <th>Add</th>
-                <th>Subtract</th>
-                <th>Remove Line</th>
+                <th>Plus</th>
+                <th>Less</th>
+                <th>Delete</th>
               </tr>
             </thead>
 
-            <tbody><% @egg.each do |egg| %>
+            <tbody>
               <tr>
+                <td><%= @eggtimer.last.created_at %></td>
+                <td>Chicken Eggs: Light Brown</td>
+                <td><%= @egginventory.last.chickenltbrownegg %></td>
+                <td>
+                  <%= button_to "+1", increment_path({id: @egginventory.last.id, eggtype: "chickenltbrownegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", increment_path({id: @egginventory.last.id, eggtype: "chickenltbrownegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
 
-                <td><%= egg.color %></td>
-                <td><%= Egg.where(color: egg.id).count %></td>
-
-                <!-- ADD EGG BUTTON -->
-                <td><button class="btn light-blue">
-                  <%= link_to '+1', edit_egg_path(egg) %></button></td>
-
-                <!-- SUBTRACT EGG BUTTON -->
-                <td><button class="btn orange darken-2">
-                  <%= link_to '-1', edit_egg_path(egg) %></button></td>
-
-                <!-- REMOVE ENTRY BUTTON -->
-                <td><button class="btn red">
-                  <%= link_to 'Remove Eggs', egg, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
-
-              <% end %>
             </tr>
           </tbody>
         </table>

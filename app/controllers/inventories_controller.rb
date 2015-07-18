@@ -7,6 +7,18 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.all
   end
 
+    # PATCH/PUT /inventories/1
+  # PATCH/PUT /inventories/1.json
+  def increment
+    @column = params[:eggtype]
+    @row = Inventory.find(params[:id])
+    @currentcount = @row[@column] + 1
+    @row[@column] = @currentcount
+    @row.save
+    # notice[:flash] "one egg added"
+    redirect_to :back
+  end
+
   # GET /inventories/1
   # GET /inventories/1.json
   def show
@@ -36,10 +48,6 @@ class InventoriesController < ApplicationController
     respond_to do |format|
       if @inventory.update(inventory_params)
         format.html { redirect_to @inventory, notice: 'Inventory was successfully updated.' }
-        format.json { render :show, status: :ok, location: @inventory }
-      else
-        format.html { render :edit }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
       end
     end
   end
