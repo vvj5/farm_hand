@@ -60,7 +60,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  width: $button-floating-size;
+  width: 150px;
   height: $button-floating-size;
   line-height: $button-floating-size;
   padding: 0;
@@ -87,7 +87,7 @@
     border-radius: 0;
   }
   &.btn-large {
-    width: $button-floating-size * 1.5;
+    width: 150px;
     height: $button-floating-size * 1.5;
     i{
       line-height: $button-floating-size * 1.5;

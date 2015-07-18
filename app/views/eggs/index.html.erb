@@ -17,114 +17,17 @@
     <!-- SPACER COLUMN -->
       <div class="col s3"><span class="make-invisible">.</span></div>
 
-          <!-- ENTRY FIELDS -->
-          <div class="col s6">
-            <form action="/eggs" method="post">
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="chickenltbrnegg" name="inventory[:id]" type="number" class="validate">
-                    <label for="chickenltbrnegg">Chicken Eggs: Light Brown</label>
-                  </div>
-                </div>
-              <br>
-              <br>
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="chickendrkbrnegg" name="inventory[:id]" type="number" class="validate">
-                    <label for="chickendrkbrnegg">Chicken Eggs: Dark Brown</label>
-                  </div>
-                </div>
-              <br>
-              <br>
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="chickenwhiteegg" name="inventory[:id]" type="number" class="validate">
-                    <label for="chickenwhiteegg">Chicken Eggs: White</label>
-                  </div>
-                </div>
-              <br>
-              <br>
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="chickenblugrnegg" name="inventory[:id]" type="number" class="validate">
-                    <label for="chickenblugrnegg">Chicken Eggs: Blue/Green</label>
-                  </div>
-                </div>
-              <br>
-              <br>
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="duckegg" name="inventory[:id]" type="number" class="validate">
-                    <label for="duckegg">Duck Eggs</label>
-                  </div>
-                </div>
-              <br>
-              <br>
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="gooseegg" name="inventory[:id]" type="number" class="validate">
-                    <label for="gooseegg">Goose Eggs</label>
-                  </div>
-                </div>
-              <br>
-              <br>
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="turkeyegg" name="inventory[:id]" type="number" class="validate">
-                    <label for="turkeyegg">Turkey Eggs</label>
-                  </div>
-                </div>
-              <br>
-              <br>
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="guineaeggs" name="inventory[:id]" type="number" class="validate">
-                      <label for="guineaeggs">Guinea Eggs</label>
-                  </div>
-                </div>
-              <br>
-              <br>
-              <div class="row">
-                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <div class="input-field col s12">
-                    <input value="number" placeholder="egg count here" id="quaileggs" name="inventory[:id]" type="number" class="validate">
-                      <label for="quaileggs">Quail Eggs</label>
-                  </div>
-                </div>
-              </form>
-            <br>
-          </div>
-
-        <!-- SPACER COLUMN -->
-        <div class="col s3"><span class="make-invisible">.</span></div>
-
-        <!-- SUBMIT BUTTON -->
-        <div class="row">
-          <div class="centerize-field">
-            <div class="input-field col s12">
-              <button class="btn waves-effect waves-orange" type="submit" name="action">Submit</button>
-            </div>
-          </div>
-        </div>
-        <br>
+      <!-- ENTRY PARTIAL -->
+      <div class="col s6">
+        <%= render(:partial => "inventories/form_eggs") %>
       </div>
 
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>
     </div>
+    <br>
   </div>
-
+</div>
+<br>
+<br>
 
 <!-- EGG INVENTORY -->
   <div class="container white z-depth-1">
@@ -141,20 +44,20 @@
           <table class="bordered responsive">
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Laid By</th>
+                <th>Date</th>
+                <th>Egg Variety</th>
                 <th>Quantity</th>
                 <th>Add</th>
                 <th>Subtract</th>
-                <th>Remove Flock</th>
+                <th>Remove Line</th>
               </tr>
             </thead>
 
             <tbody><% @egg.each do |egg| %>
               <tr>
-                <td><%= egg.id %></td>
-                <td><%= egg.animal_id %></td>
-                <td><%= Egg.where(id: egg.id).count %></td>
+
+                <td><%= egg.color %></td>
+                <td><%= Egg.where(color: egg.id).count %></td>
 
                 <!-- ADD EGG BUTTON -->
                 <td><button class="btn light-blue">

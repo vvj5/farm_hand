@@ -1,0 +1,68 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- EGGS -->
+<div class="input-field col s12 brown lighten-5">
+    <%= f.label "# Chicken Eggs: Light Brown" %><br>
+    <%= f.number_field :chickenltbrownegg %>
+  </div>
+  <div class="input-field col s12 brown lighten-4">
+    <%= f.label "# Chicken Eggs: Dark Brown" %><br>
+    <%= f.number_field :chickendrkbrnegg %>
+  </div>
+  <div class="input-field col s12">
+    <%= f.label "# Chicken: White" %><br>
+    <%= f.number_field :chickenwhiteegg %>
+  </div>
+  <div class="input-field col s12 teal lighten-5">
+    <%= f.label "# Chicken Eggs: Blu/Grn" %><br>
+    <%= f.number_field :chickenblugrnegg %>
+  </div>
+  <div class="input-field col s12">
+    <%= f.label "# Chicken Eggs: Bantam" %><br>
+    <%= f.number_field :chickenbantamegg %>
+  </div>
+  <div class="input-field col s12 green lighten-5">
+    <%= f.label "# Duck Eggs" %><br>
+    <%= f.number_field :duckegg %>
+  </div>
+  <div class="input-field col s12">
+    <%= f.label "# Goose Eggs" %><br>
+    <%= f.number_field :gooseegg %>
+  </div>
+  <div class="input-field col s12 orange lighten-5">
+    <%= f.label "# Turkey Eggs" %><br>
+    <%= f.number_field :turkeyegg %>
+  </div>
+  <div class="input-field col s12 brown lighten-5">
+    <%= f.label "# Guinea Hen Eggs" %><br>
+    <%= f.number_field :guineaegg %>
+  </div>
+  <div class="input-field col s12 brown lighten-4">
+    <%= f.label "# Quail Eggs" %><br>
+    <%= f.number_field :quailegg %>
+  </div>
+
+  <div class="row">
+    <div class="centerize-field">
+      <div class="actions">
+        <div class="input-field col s12">
+        <br>
+            <%= f.submit %>
+            <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+

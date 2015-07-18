@@ -5,17 +5,28 @@
 <table>
   <thead>
     <tr>
-      <th>Chicken</th>
+      <th>Chicken Lt Brown Layer</th>
+      <th>Chicken Drk Brown Layer</th>
+      <th>Chicken White Layer</th>
+      <th>Chicken Blu/Grn Layer</th>
+      <th>Chicken Bantam Layer</th>
       <th>Duck</th>
       <th>Goose</th>
       <th>Turkey</th>
       <th>Guinea</th>
       <th>Quail</th>
-      <th>Brown</th>
-      <th>White</th>
-      <th>Blue</th>
-      <th>Drkbrn</th>
-      <th>Speckled</th>
+      <th>Chicken Lt Brown Egg</th>
+      <th>Chicken Drk Brown Egg</th>
+      <th>Chicken White Egg</th>
+      <th>Chicken Blu/Grn Egg</th>
+      <th>Chicken Bantam Egg</th>
+      <th>Duck Egg</th>
+      <th>Goose Egg</th>
+      <th>Turkey Egg</th>
+      <th>Guinea Egg</th>
+      <th>Quail Egg</th>
+
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,17 +34,26 @@
   <tbody>
     <% @inventories.each do |inventory| %>
       <tr>
-        <td><%= inventory.chicken %></td>
+        <td><%= inventory.chickenltbrownlayer %></td>
+        <td><%= inventory.chickendrkbrnlayer %></td>
+        <td><%= inventory.chickenwhitelayer %></td>
+        <td><%= inventory.chickenblugrnlayer %></td>
+        <td><%= inventory.chickenbantamlayer %></td>
         <td><%= inventory.duck %></td>
         <td><%= inventory.goose %></td>
         <td><%= inventory.turkey %></td>
         <td><%= inventory.guinea %></td>
         <td><%= inventory.quail %></td>
-        <td><%= inventory.brown %></td>
-        <td><%= inventory.white %></td>
-        <td><%= inventory.blue %></td>
-        <td><%= inventory.drkbrn %></td>
-        <td><%= inventory.speckled %></td>
+        <td><%= inventory.chickenltbrownegg %></td>
+        <td><%= inventory.chickendrkbrnegg %></td>
+        <td><%= inventory.chickenwhiteegg %></td>
+        <td><%= inventory.chickenblugrnegg %></td>
+        <td><%= inventory.chickenbantamegg %></td>
+        <td><%= inventory.duckegg %></td>
+        <td><%= inventory.gooseegg %></td>
+        <td><%= inventory.turkeyegg %></td>
+        <td><%= inventory.guineaegg %></td>
+        <td><%= inventory.quailegg %></td>
         <td><%= link_to 'Show', inventory %></td>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
         <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>

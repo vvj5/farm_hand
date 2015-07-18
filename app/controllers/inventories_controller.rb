@@ -25,16 +25,9 @@ class InventoriesController < ApplicationController
   # POST /inventories.json
   def create
     @inventory = Inventory.new(inventory_params)
-
-    respond_to do |format|
-      if @inventory.save
-        format.html { redirect_to @inventory, notice: 'Inventory was successfully created.' }
-        format.json { render :show, status: :created, location: @inventory }
-      else
-        format.html { render :new }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
-      end
-    end
+    @inventory.save
+    flash[:notice] = "Added!"
+    redirect_to :back
   end
 
   # PATCH/PUT /inventories/1
@@ -68,7 +61,7 @@ class InventoriesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def inventory_params
-      params.require(:inventory).permit(:chicken, :duck, :goose, :turkey, :guinea, :quail, :brown, :white, :blue, :drkbrn, :speckled)
+     def inventory_params
+      params.require(:inventory).permit(:chickenltbrownlayer, :chickendrkbrnlayer, :chickenwhitelayer, :chickenblugrnlayer, :chickenbantamlayer, :duck, :goose, :turkey, :guinea, :quail, :chickenltbrownegg, :chickendrkbrnegg, :chickenwhiteegg, :chickenblugrnegg, :chickenbantamegg, :duckegg, :gooseegg, :turkeyegg, :guineaegg, :quailegg)
     end
 end

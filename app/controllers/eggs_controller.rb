@@ -6,6 +6,7 @@ skip_before_action :verify_authenticity_token
   # GET /eggs
   def index
     @egg = Egg.all
+    @inventory = Inventory.new
   end
 
   # GET /eggs
