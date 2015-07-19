@@ -4,9 +4,9 @@
       <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
 
       <ul>
-      <% @inventory.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @inventory.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -62,6 +62,8 @@
     <%= f.number_field :quailegg %>
   </div>
 
+
   <%= f.submit 'enter count', :class => 'willbtn-submit' %>
   <% end %>
+
 

@@ -1,14 +1,15 @@
 // shared styles
 .willbtn-submit {
   width: 100%;
-  margin: 20px;
+  margin: 20;
   border: none;
   height: 40px;
   padding: 10px;
   color: white;
   font-style: bold;
   font-size: 16px;
-  background-color: $button-color;
+  background-color: #FF9800;
+  display: inline-block;
   text-align: center;
   letter-spacing: .5px;
 
@@ -17,13 +18,39 @@
   cursor: pointer;
 
   &:hover {
-    background-color: lighten($button-color, 5%);
+    background-color: lighten(#FF9800, 5%);
     @extend .z-depth-1-half;
   }
 }
 
+.willbtn-eggs {
+  margin: 20;
+  border: none;
+  height: 40px;
+  width: 185px;
+  padding: 10px;
+  color: white;
+  font-style: bold;
+  font-size: 16px;
+  background-color: #FF9800;
+  text-align: center;
+  letter-spacing: .5px;
+
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(#FF9800, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+
+
+
 .willbtn-increment {
-  margin: 20px;
+  margin: 20;
   border: none;
   height: 40px;
   width: 40px;
@@ -46,7 +73,7 @@
 }
 
 .willbtn-decrement {
-  margin: 20px;
+  margin: 20;
   border: none;
   height: 40px;
   width: 40px;
@@ -69,7 +96,7 @@
 }
 
 .willbtn-delete {
-  margin: 20px;
+  margin: 20;
   border: none;
   height: 40px;
   width: 80px;
@@ -92,7 +119,7 @@
 }
 
 .willbtn-eggs {
-  margin: 10px;
+  margin: 10;
   border: none;
   height: 40px;
   width: 185px;
@@ -115,7 +142,7 @@
 }
 
 .willbtn-animals {
-  margin: 10px;
+  margin: 10;
   border: none;
   height: 40px;
   width: 185px;
@@ -138,7 +165,7 @@
 }
 
 .willbtn-income {
-  margin: 10px;
+  margin: 10;
   border: none;
   height: 40px;
   width: 185px;
@@ -161,7 +188,7 @@
 }
 
 .willbtn-expense {
-  margin: 10px;
+  margin: 10;
   border: none;
   height: 40px;
   width: 185px;
@@ -184,7 +211,7 @@
 }
 
 .willbtn-trends {
-  margin: 10px;
+  margin: 10;
   border: none;
   height: 40px;
   width: 185px;

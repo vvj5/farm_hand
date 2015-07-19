@@ -9,6 +9,24 @@
   </div>
   <br>
 
+
+create_table "incomes", force: :cascade do |t|
+    t.integer  "quantity"
+    t.integer  "amount"
+    t.integer  "farm_id"
+    t.integer  "egg_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "eggs", force: :cascade do |t|
+    t.string   "color"
+    t.integer  "quantity"
+    t.integer  "animal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   <!-- laid by column -->
     <div class="container">
       <div class="row">
