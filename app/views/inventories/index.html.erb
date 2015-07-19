@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Entry Date</th>
       <th>Chicken Lt Brown Layer</th>
       <th>Chicken Drk Brown Layer</th>
       <th>Chicken White Layer</th>
@@ -34,6 +35,7 @@
   <tbody>
     <% @inventories.each do |inventory| %>
       <tr>
+        <td><%= inventory.created_at.strftime("%D") %></td>
         <td><%= inventory.chickenltbrownlayer %></td>
         <td><%= inventory.chickendrkbrnlayer %></td>
         <td><%= inventory.chickenwhitelayer %></td>

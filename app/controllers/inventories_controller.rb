@@ -7,12 +7,24 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.all
   end
 
-    # PATCH/PUT /inventories/1
+  # PATCH/PUT /inventories/1
   # PATCH/PUT /inventories/1.json
-  def increment
+  def incrementegg
     @column = params[:eggtype]
     @row = Inventory.find(params[:id])
     @currentcount = @row[@column] + 1
+    @row[@column] = @currentcount
+    @row.save
+    # notice[:flash] "one egg added"
+    redirect_to :back
+  end
+
+  # PATCH/PUT /inventories/1
+  # PATCH/PUT /inventories/1.json
+  def decrementegg
+    @column = params[:eggtype]
+    @row = Inventory.find(params[:id])
+    @currentcount = @row[@column] - 1
     @row[@column] = @currentcount
     @row.save
     # notice[:flash] "one egg added"
@@ -23,6 +35,33 @@ class InventoriesController < ApplicationController
   # GET /inventories/1.json
   def show
   end
+
+
+   # PATCH/PUT /inventories/1
+  # PATCH/PUT /inventories/1.json
+  def incrementanimal
+    @column = params[:animaltype]
+    @row = Inventory.find(params[:id])
+    @currentcount = @row[@column] + 1
+    @row[@column] = @currentcount
+    @row.save
+    # notice[:flash] "one animal added"
+    redirect_to :back
+  end
+
+
+  # PATCH/PUT /inventories/1
+  # PATCH/PUT /inventories/1.json
+  def decrementanimal
+    @column = params[:animaltype]
+    @row = Inventory.find(params[:id])
+    @currentcount = @row[@column] - 1
+    @row[@column] = @currentcount
+    @row.save
+    # notice[:flash] "one animal added"
+    redirect_to :back
+  end
+
 
   # GET /inventories/new
   def new

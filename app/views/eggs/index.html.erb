@@ -4,7 +4,7 @@
   <div class="center-align">
     <div class="row">
       <div class="col s12 orange z-depth-1">
-        <span class="whiteit-title">Let's Count Some Eggs!</span>
+        <span class="whiteit-title">Enter Today's Egg Count</span>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
     <!-- SPACER COLUMN -->
       <div class="col s3"><span class="make-invisible">.</span></div>
 
-      <!-- ENTRY PARTIAL -->
+      <!-- EGG ENTRY PARTIAL -->
       <div class="col s6">
         <%= render(:partial => "inventories/form_eggs") %>
       </div>
@@ -29,12 +29,12 @@
 <br>
 <br>
 
-<!-- EGG INVENTORY -->
+<!-- LATEST EGG COUNT -->
   <div class="container white z-depth-1">
     <div class="center-align">
       <div class="row">
         <div class="col s12 orange z-depth-1">
-          <span class="whiteit-title">Eggs Currently In Inventory</span>
+          <span class="whiteit-title">View/Adjust Latest Egg Count</span>
         </div>
       </div>
     </div>
@@ -55,21 +55,157 @@
 
             <tbody>
               <tr>
-                <td><%= @eggtimer.last.created_at %></td>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
                 <td>Chicken Eggs: Light Brown</td>
                 <td><%= @egginventory.last.chickenltbrownegg %></td>
                 <td>
-                  <%= button_to "+1", increment_path({id: @egginventory.last.id, eggtype: "chickenltbrownegg" }), :class => 'willbtn-increment' %>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "chickenltbrownegg" }), :class => 'willbtn-increment' %>
                 </td>
                 <td>
-                  <%= button_to "-1", increment_path({id: @egginventory.last.id, eggtype: "chickenltbrownegg" }), :class => 'willbtn-decrement' %>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "chickenltbrownegg" }), :class => 'willbtn-decrement' %>
                 </td>
                 <td>
                   <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
                 </td>
+              </tr>
 
-            </tr>
-          </tbody>
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Chicken Eggs: Dark Brown</td>
+                <td><%= @egginventory.last.chickendrkbrnegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "chickendrkbrnegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "chickendrkbrnegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Chicken Eggs: White</td>
+                <td><%= @egginventory.last.chickenwhiteegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "chickenwhiteegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "chickenwhiteegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Chicken Eggs: Blu/Grn</td>
+                <td><%= @egginventory.last.chickenblugrnegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "chickenblugrnegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "chickenblugrnegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Chicken Eggs: Bantam</td>
+                <td><%= @egginventory.last.chickenbantamegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "chickenbantamegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "chickenbantamegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Duck Eggs</td>
+                <td><%= @egginventory.last.duckegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "duckegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "duckegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Goose Eggs</td>
+                <td><%= @egginventory.last.gooseegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "gooseegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "gooseegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Turkey Eggs</td>
+                <td><%= @egginventory.last.turkeyegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "turkeyegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "turkeyegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Guinea Hen Eggs</td>
+                <td><%= @egginventory.last.guineaegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "guineaegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "guineaegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              <tr>
+                <td><%= @eggtimer.last.created_at.strftime("%D") %></td>
+                <td>Quail Eggs</td>
+                <td><%= @egginventory.last.quailegg %></td>
+                <td>
+                  <%= button_to "+1", incrementegg_path({id: @egginventory.last.id, eggtype: "quailegg" }), :class => 'willbtn-increment' %>
+                </td>
+                <td>
+                  <%= button_to "-1", decrementegg_path({id: @egginventory.last.id, eggtype: "quailegg" }), :class => 'willbtn-decrement' %>
+                </td>
+                <td>
+                  <%= button_to "Delete", "eggs/:id", method: :delete, data: { confirm: 'Are you sure?' },  :class => 'willbtn-delete' %>
+                </td>
+              </tr>
+
+              </tr>
+            </tbody>
         </table>
       </div>
     </div>

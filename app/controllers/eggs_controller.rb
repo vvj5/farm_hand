@@ -11,11 +11,6 @@ skip_before_action :verify_authenticity_token
     @inventory = Inventory.new
   end
 
-  # GET /eggs
-  def stock
-    @egg = Egg.all
-  end
-
 
   # POST /eggs
   def create

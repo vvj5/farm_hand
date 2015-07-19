@@ -10,7 +10,10 @@ Rails.application.routes.draw do
             resources :animals
             resources :farms
             resources :trends
-            post 'inventories/increment', to: 'inventories#increment', as: "increment"
+            post 'inventories/incrementanimal', to: 'inventories#incrementanimal', as: "incrementanimal"
+            post 'inventories/decrementanimal', to: 'inventories#decrementanimal', as: "decrementanimal"
+            post 'inventories/incrementegg', to: 'inventories#incrementegg', as: "incrementegg"
+            post 'inventories/decrementegg', to: 'inventories#decrementegg', as: "decrementegg"
             resources :inventories
 
   root 'farms#index'
