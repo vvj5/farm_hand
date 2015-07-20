@@ -23,18 +23,17 @@
     <!-- <div id="wrapper"> -->
       <div id="header"><%= render "layouts/header" %></div>
 
+      <% if notice || alert %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+
       <%= yield %>
 
       <div id="page-footer"><%= render "layouts/footer" %></div>
 
-      <p class="notice"><%= notice %></p>
 
-      <p class="alert"><%= alert %></p>
-
-<!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
+      <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="js/materialize.min.js"></script>
-
     </body>
 </html>

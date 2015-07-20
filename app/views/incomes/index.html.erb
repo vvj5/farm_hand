@@ -1,7 +1,6 @@
 
 
 <!-- GET INCOMES TO ADD NEW RECORD, NOT OVERWRITE EXISTING -->
-
 <br>
 <div class="container white z-depth-1">
   <div class="center-align">
@@ -11,29 +10,29 @@
       </div>
     </div>
   </div>
-
   <div class="container">
   <br>
-  <br>
-    <div class="row">
+    <div class="input-field col s12 grey lighten-3 ">
+    <br>
+      <div class="row">
 
-    <!-- SPACER COLUMN -->
-      <span class="make-invisible col s3">.</span>
+        <!-- SPACER COLUMN -->
+        <span class="make-invisible col s3">.</span>
 
-      <!-- EXPENSE ENTRY PARTIAL -->
-      <div class="col s6">
-        <%= render(:partial => "incomes/form_income") %>
+        <!-- EXPENSE ENTRY PARTIAL -->
+        <div class="col s6">
+          <%= render(:partial => "incomes/form_income") %>
+        </div>
       </div>
 
     </div>
-    <br>
   </div>
+  <br>
 </div>
 <br>
 <br>
-
 <!-- EXPENSES LEDGER -->
-  <div class="container white z-depth-1">
+<div class="container white z-depth-1">
     <div class="center-align">
       <div class="row">
         <div class="col s12 light-blue z-depth-1">
@@ -41,28 +40,91 @@
         </div>
       </div>
     </div>
-    ENTRIES HERE CURRENTLY OVER-WRITE EACH OTHER :(
     <div class="inventory-box">
       <div class="col 12">
         <div class="row">
           <table class="bordered responsive">
             <thead>
               <tr>
-                <th>DATE</th>
+                <th>Date</th>
                 <th>EGG TYPE</th>
                 <th>QUANTITY</th>
                 <th>SALE AMOUNT</th>
                 <th>DELETE</th>
               </tr>
             </thead>
-
             <tbody>
               <tr>
-                <td><%= @income.last.created_at.strftime("%D") %></td>
-                <td>egg type needs to go here</td>
-                <td>number of eggs sold needs to go here</td>
-                <td>sale amount needs to go here</td>
-                <td>delete button needs to go here</td>
+                <td>07/14/15</td>
+                <td>Chicken: Light Brown</td>
+                <td>12</td>
+                <td>$6</td>
+                <td>
+                  <span class="willbtn-delete">Delete</span>
+                </td>
+              </tr>
+              <tr>
+                <td>07/14/15</td>
+                <td>Duck</td>
+                <td>6</td>
+                <td>$18</td>
+                <td>
+                  <span class="willbtn-delete">Delete</span>
+                </td>
+              </tr>
+              <tr>
+                <td>07/14/15</td>
+                <td>Chicken: Dark Brown</td>
+                <td>12</td>
+                <td>$6</td>
+                <td>
+                  <span class="willbtn-delete">Delete</span>
+                </td>
+              </tr>
+              <tr>
+                <td>07/14/15</td>
+                <td>Chicken: White</td>
+                <td>12</td>
+                <td>$6</td>
+                <td>
+                  <span class="willbtn-delete">Delete</span>
+                </td>
+              </tr>
+              <tr>
+                <td>07/14/15</td>
+                <td>Chicken: Light Brown</td>
+                <td>6</td>
+                <td>$3</td>
+                <td>
+                  <span class="willbtn-delete">Delete</span>
+                </td>
+              </tr>
+              <tr>
+                <td>07/07/15</td>
+                <td>Quail</td>
+                <td>12</td>
+                <td>$10</td>
+                <td>
+                  <span class="willbtn-delete">Delete</span>
+                </td>
+              </tr>
+              <tr>
+                <td>07/07/15</td>
+                <td>Chicken: Light Brown</td>
+                <td>12</td>
+                <td>$6</td>
+                <td>
+                  <span class="willbtn-delete">Delete</span>
+                </td>
+              </tr>
+              <tr>
+                <td>07/07/15</td>
+                <td>Chicken: White</td>
+                <td>12</td>
+                <td>$6</td>
+                <td>
+                  <span class="willbtn-delete">Delete</span>
+                </td>
               </tr>
             </tbody>
         </table>
@@ -70,5 +132,6 @@
     </div>
   </div>
 </div>
+<br>
 <br>
 <br>

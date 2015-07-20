@@ -1,19 +1,24 @@
-<%= form_for :expense do |f| %>
 
-  <div class="input-field col s12 ">
-    <%= f.label "Expense Description" %>
-    <%= f.text_field :name %>
+<%= form_for :income do |f| %>
+  <div class="row">
+    <select class="browser-default">
+      <option value="" disabled selected>EXPENSE</option>
+      <option value="feed">Feed</option>
+      <option value="cartons">Cartons</option>
+      <option value="supplements">Supplements</option>
+      <option value="medicine">Medicine</option>
+      <option value="other">Other</option>
+    </select>
   </div>
-
-  <div class="input-field col s12">
-    <%= f.label "$ Amount" %>
-    NEEDS TO GO HERE
-    <br>
+  <div class="row">
+    <div class="input-field col s12 white">
+      EXPENSE AMOUNT ($)
+      <%= number_field_tag 'amount' %>
+    </div>
   </div>
-
-  <%= f.submit 'Enter Expense', :class => 'willbtn-submit-exp' %>
-
+  <%= f.submit 'ENTER EXPENSE', :class => 'willbtn-submit-exp' %>
   <% end %>
+  <br>
 
 
 

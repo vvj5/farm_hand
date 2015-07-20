@@ -1,19 +1,32 @@
+
 <%= form_for :income do |f| %>
-
-  <div class="input-field col s12 ">
-    <%= f.label "TYPE OF EGGS SOLD" %>
-    NEEDS TO GO HERE
+  <div class="row">
+    <select class="browser-default">
+      <option value="" disabled selected>TYPE OF EGG</option>
+      <option value="chickenltbrownegg">Chicken: Light Brown</option>
+      <option value="chickendrkbrnegg">Chicken: Dark Brown</option>
+      <option value="chickenwhiteegg">Chicken: White</option>
+      <option value="chickenblugrnegg">Chicken: Blue/Green</option>
+      <option value="chickenbantamegg">Chicken: Bantam</option>
+      <option value="duckegg">Duck</option>
+      <option value="gooseegg">Goose</option>
+      <option value="turkeyegg">Turkey</option>
+      <option value="guineaegg">Guinea Hen</option>
+      <option value="quailegg">Quail</option>
+    </select>
+    <div class="input-field col s12 white">
+      NUMBER OF EGGS
+      <%= number_field_tag 'quantity' %>
+    </div>
   </div>
-
-  <div class="input-field col s12">
-    <%= f.label "$ Amount" %>
-    NEEDS TO GO HERE
-    <br>
+  <div class="row">
+    <div class="input-field col s12 white">
+      SALE AMOUNT ($)
+      <%= number_field_tag 'amount' %>
+    </div>
   </div>
-
   <%= f.submit 'ENTER SALE', :class => 'willbtn-submit-inc' %>
-
   <% end %>
-
+  <br>
 
 
