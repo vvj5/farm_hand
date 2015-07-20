@@ -1,159 +1,74 @@
+
+
+<!-- GET INCOMES TO ADD NEW RECORD, NOT OVERWRITE EXISTING -->
+
 <br>
 <div class="container white z-depth-1">
   <div class="center-align">
     <div class="row">
       <div class="col s12 light-blue z-depth-1">
-        <span class="whiteit-title">Enter Income</span>
+        <span class="whiteit-title">ENTER EGG SALE</span>
       </div>
     </div>
   </div>
+
+  <div class="container">
   <br>
+  <br>
+    <div class="row">
 
+    <!-- SPACER COLUMN -->
+      <span class="make-invisible col s3">.</span>
 
-create_table "incomes", force: :cascade do |t|
-    t.integer  "quantity"
-    t.integer  "amount"
-    t.integer  "farm_id"
-    t.integer  "egg_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "eggs", force: :cascade do |t|
-    t.string   "color"
-    t.integer  "quantity"
-    t.integer  "animal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  <!-- laid by column -->
-    <div class="container">
-      <div class="row">
-        <div class="make-invisible col s2">.</div>
-          <div class="col s5">
-            <span class="blackit-sub">Laid By</span>
-              <form action="/incomes" method="post">
-
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="chicken" name="egg[animal_id]" type="radio" value="1" />
-                  <label for="chicken">Chicken</label>
-                </p>
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="duck" name="egg[animal_id]" type="radio" value="2" />
-                  <label for="duck">Duck</label>
-                </p>
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="goose" name="egg[animal_id]" type="radio" value="3" />
-                  <label for="goose">Goose</label>
-                </p>
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="turkey" name="egg[animal_id]" type="radio" value="4" />
-                  <label for="turkey">Turkey</label>
-                </p>
-                <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                  <input id="guinea" name="egg[animal_id]" type="radio" value="5" />
-                  <label for="guinea">Guinea Hen</label>
-                </p>
-        </div>
-
-        <!-- egg color column -->
-        <div class="col s5">
-          <span class="blackit-sub">Egg Color</span>
-
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="brown" name="egg[color]" type="radio" value="brown" />
-                  <label for="brown">Brown</label></p>
-
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="white" name="egg[color]" type="radio" value="white" />
-                  <label for="white">White</label></p>
-
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="blue" name="egg[color]" type="radio" value="blue" />
-                  <label for="blue">Blue</label></p>
-
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="dark_brown" name="egg[color]" type="radio" value="dark_brown" />
-                  <label for="dark_brown">Dark Brown</label></p>
-
-            <p><input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-                <input id="speckled" name="egg[color]" type="radio" value="speckled" />
-                  <label for="speckled">Speckled</label></p>
-        </div>
+      <!-- EXPENSE ENTRY PARTIAL -->
+      <div class="col s6">
+        <%= render(:partial => "incomes/form_income") %>
       </div>
-      <div class="row">
-        <div class="centerize-field">
-          <div class="input-field col s12">
-            <input id="quantity" type="number" class="validate">
-            <label for="quantity">Quantity</label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="centerize-field">
-          <div class="input-field col s12">
-            <input id="incomes" type="number" class="validate">
-            <label for="incomes">$ Amount</label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="centerize-field">
-          <div class="input-field col s12">
-            <button class="btn waves-effect light-blue validate" type="submit" name="action">Submit</button>
-          </div>
-        </div>
-      </div>
-    </form>
-    <br>
-    <br>
 
-      </div>
-      </div>
     </div>
-    </div>
-
     <br>
-    <br>
+  </div>
+</div>
+<br>
+<br>
 
-      <!-- past incomes table -->
-    <div class="container white z-depth-1">
+<!-- EXPENSES LEDGER -->
+  <div class="container white z-depth-1">
     <div class="center-align">
       <div class="row">
-      <div class="col s12 light-blue z-depth-1">
-        <span class="whiteit-title">Past Income Transactions</span>
+        <div class="col s12 light-blue z-depth-1">
+          <span class="whiteit-title">INCOME LEDGER</span>
+        </div>
       </div>
-      </div>
-    <div class="container">
-      <table class="bordered responsive">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Laid By</th>
-            <th>Egg Color</th>
-            <th>Number Sold</th>
-            <th>Income Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @incomes.each do |income| %>
-            <tr>
-              <td><%= income.created_at %></td>
-              <td><%= animal.name %></td>
-              <td><%= eggs.color_id %></td>
-              <td><%= income.quantity_sold %></td>
-              <td><%= income.amount %></td>
-              <td><%= link_to 'Edit', edit_income_path(income) %></td>
-              <td><%= link_to 'Remove', income, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
     </div>
-    </div>
-    </div>
-    </div>
-    <br>
-    <br>
+    ENTRIES HERE CURRENTLY OVER-WRITE EACH OTHER :(
+    <div class="inventory-box">
+      <div class="col 12">
+        <div class="row">
+          <table class="bordered responsive">
+            <thead>
+              <tr>
+                <th>DATE</th>
+                <th>EGG TYPE</th>
+                <th>QUANTITY</th>
+                <th>SALE AMOUNT</th>
+                <th>DELETE</th>
+              </tr>
+            </thead>
 
+            <tbody>
+              <tr>
+                <td><%= @income.last.created_at.strftime("%D") %></td>
+                <td>egg type needs to go here</td>
+                <td>number of eggs sold needs to go here</td>
+                <td>sale amount needs to go here</td>
+                <td>delete button needs to go here</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>

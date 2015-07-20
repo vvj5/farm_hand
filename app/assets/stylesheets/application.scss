@@ -60,7 +60,7 @@ text-align: center;
 
 .greenit-title {
   color: #8CC252;
-  font-weight: bold;
+  // font-weight: bold;
   text-align: center;
   font-size: 32px;
   $i: 0;
@@ -73,14 +73,14 @@ text-align: center;
 
 .greenit-sub {
   color: #8CC252;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 16px;
   text-align: center;
 }
 
 .whiteit-title {
   color: white;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 32px;
   $i: 0;
   @while $i <= $intervals {
@@ -92,14 +92,14 @@ text-align: center;
 
 .whiteit-sub {
   color: white;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 16px;
   text-align: center;
 }
 
 .blackit-title {
   color: black;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 32px;
   $i: 0;
   @while $i <= $intervals {
@@ -111,7 +111,7 @@ text-align: center;
 
 .blackit-sub {
   color: black;
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 16px;
   text-align: center;
 }

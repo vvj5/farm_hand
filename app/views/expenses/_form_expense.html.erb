@@ -1,0 +1,19 @@
+<%= form_for :expense do |f| %>
+
+  <div class="input-field col s12 ">
+    <%= f.label "Expense Description" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="input-field col s12">
+    <%= f.label "$ Amount" %>
+    NEEDS TO GO HERE
+    <br>
+  </div>
+
+  <%= f.submit 'Enter Expense', :class => 'willbtn-submit-exp' %>
+
+  <% end %>
+
+
+

@@ -4,7 +4,7 @@ class IncomesController < ApplicationController
   # GET /incomes
   # GET /incomes.json
   def index
-    @incomes = Income.all
+    @income = Income.all
   end
 
   # GET /incomes/1
@@ -25,28 +25,18 @@ class IncomesController < ApplicationController
   # POST /incomes.json
   def create
     @income = Income.new(income_params)
-
-    respond_to do |format|
-      if @income.save
-        format.html { redirect_to @income, notice: 'Income was successfully created.' }
-        format.json { render :show, status: :created, location: @income }
-      else
-        format.html { render :new }
-        format.json { render json: @income.errors, status: :unprocessable_entity }
-      end
-    end
+    @income.save
+    flash[:notice] = "INCOME SUBMITTED!"
+    redirect_to :back
   end
+
 
   # PATCH/PUT /incomes/1
   # PATCH/PUT /incomes/1.json
   def update
     respond_to do |format|
       if @income.update(income_params)
-        format.html { redirect_to @income, notice: 'Income was successfully updated.' }
-        format.json { render :show, status: :ok, location: @income }
-      else
-        format.html { render :edit }
-        format.json { render json: @income.errors, status: :unprocessable_entity }
+        format.html { redirect_to @income, notice: 'income was successfully updated.' }
       end
     end
   end
@@ -67,8 +57,9 @@ class IncomesController < ApplicationController
       @income = Income.find(params[:id])
     end
 
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def income_params
-      params.require(:income).permit(:id, :egg_id, :quantity_sold, :amount, :Farm_id)
+      params.require(:income).permit(:id, :quantity, :amount, :farm_id, :egg_id)
     end
 end

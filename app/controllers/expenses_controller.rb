@@ -4,7 +4,8 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all
+    @expense = Expense.all
+    @egg = Egg.all
   end
 
   # GET /expenses/1
@@ -25,17 +26,11 @@ class ExpensesController < ApplicationController
   # POST /expenses.json
   def create
     @expense = Expense.new(expense_params)
-
-    respond_to do |format|
-      if @expense.save
-        format.html { redirect_to @expense, notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
-      else
-        format.html { render :new }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
-    end
+    @expense.save
+    flash[:notice] = "Expense submitted!"
+    redirect_to :back
   end
+
 
   # PATCH/PUT /expenses/1
   # PATCH/PUT /expenses/1.json
@@ -43,10 +38,6 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       if @expense.update(expense_params)
         format.html { redirect_to @expense, notice: 'Expense was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
-      else
-        format.html { render :edit }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +60,6 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:id, :title, :amount, :Farm_id)
+      params.require(:expense).permit(:id, :name, :amount, :category)
     end
 end

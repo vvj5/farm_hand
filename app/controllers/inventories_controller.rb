@@ -5,6 +5,8 @@ class InventoriesController < ApplicationController
   # GET /inventories.json
   def index
     @inventories = Inventory.all
+    @expense = Expense.all
+    @income = Income.all
   end
 
   # PATCH/PUT /inventories/1

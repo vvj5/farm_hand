@@ -1,4 +1,52 @@
 // shared styles
+.willbtn-submit-inc {
+  width: 100%;
+  margin: 20;
+  border: none;
+  height: 40px;
+  padding: 10px;
+  color: white;
+  font-style: bold;
+  font-size: 16px;
+  background-color: #03A9F4;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: .5px;
+
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(#03A9F4, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
+.willbtn-submit-exp {
+  width: 100%;
+  margin: 20;
+  border: none;
+  height: 40px;
+  padding: 10px;
+  color: white;
+  font-style: bold;
+  font-size: 16px;
+  background-color: #F44336;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: .5px;
+
+  @extend .z-depth-1;
+  @include transition(.2s ease-out);
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(#F44336, 5%);
+    @extend .z-depth-1-half;
+  }
+}
+
 .willbtn-submit {
   width: 100%;
   margin: 20;
@@ -23,34 +71,8 @@
   }
 }
 
-.willbtn-eggs {
-  margin: 20;
-  border: none;
-  height: 40px;
-  width: 185px;
-  padding: 10px;
-  color: white;
-  font-style: bold;
-  font-size: 16px;
-  background-color: #FF9800;
-  text-align: center;
-  letter-spacing: .5px;
-
-  @extend .z-depth-1;
-  @include transition(.2s ease-out);
-  cursor: pointer;
-
-  &:hover {
-    background-color: lighten(#FF9800, 5%);
-    @extend .z-depth-1-half;
-  }
-}
-
-
-
-
 .willbtn-increment {
-  margin: 20;
+  // margin: 20;
   border: none;
   height: 40px;
   width: 40px;
@@ -73,7 +95,7 @@
 }
 
 .willbtn-decrement {
-  margin: 20;
+  // margin: 20;
   border: none;
   height: 40px;
   width: 40px;
@@ -96,7 +118,7 @@
 }
 
 .willbtn-delete {
-  margin: 20;
+  // margin: 20;
   border: none;
   height: 40px;
   width: 80px;
@@ -118,8 +140,10 @@
   }
 }
 
+
 .willbtn-eggs {
-  margin: 10;
+  // margin: 20;
+  margin-bottom: 10px;
   border: none;
   height: 40px;
   width: 185px;
@@ -142,7 +166,8 @@
 }
 
 .willbtn-animals {
-  margin: 10;
+  // margin: 20;
+  margin-bottom: 10px;
   border: none;
   height: 40px;
   width: 185px;
@@ -165,7 +190,8 @@
 }
 
 .willbtn-income {
-  margin: 10;
+  // margin: 20;
+  margin-bottom: 10px;
   border: none;
   height: 40px;
   width: 185px;
@@ -188,7 +214,8 @@
 }
 
 .willbtn-expense {
-  margin: 10;
+  // margin: 20;
+  margin-bottom: 10px;
   border: none;
   height: 40px;
   width: 185px;
@@ -211,7 +238,8 @@
 }
 
 .willbtn-trends {
-  margin: 10;
+  // margin: 20;
+  margin-bottom: 10px;
   border: none;
   height: 40px;
   width: 185px;
