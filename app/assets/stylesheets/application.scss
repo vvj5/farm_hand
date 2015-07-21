@@ -15,8 +15,9 @@ color: white;
 text-align: center;
 }
 
-.bottomline {
-  border-bottom: solid 1px #eeeeee;
+.trendsetter {
+  width: 100%;
+  padding: 20px;
 }
 
 .nudgeit {
@@ -66,7 +67,7 @@ text-align: center;
   color: #8CC252;
   // font-weight: bold;
   text-align: center;
-  font-size: 32px;
+  font-size: 36px;
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width : 360 + ($i * $interval-size)) {
