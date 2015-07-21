@@ -1,25 +1,678 @@
-<br/>
-<div class="container white z-depth-1">
+<br>
+
   <div class="center-align">
-    <div class="row">
-      <div class="col s12 grey z-depth-1">
-        <span class="whiteit-title">ANALYZE PRODUCTION TRENDS</span>
+    <div class="col s12 grey">
+      <span class="whiteit-title">DAILY PRODUCTION LEDGER</span>
+    </div>
+  </div>
+      <div class="col 12">
+        <div class="center-align">
+          <table class="bordered responsive">
+            <thead>
+              <tr>
+                <th>EGG DATA</th>
+                <th>07/13/15</th>
+                <th>07/14/15</th>
+                <th>07/15/15</th>
+                <th>07/16/15</th>
+                <th>07/17/15</th>
+                <th>07/18/15</th>
+                <th>07/19/15</th>
+                <th>07/20/15</th>
+                <th>07/21/15</th>
+                <th>07/22/15</th>
+                <th>07/23/15</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="brown lighten-5">
+                <td>Chicken Eggs: Light Brown</td>
+                <td>14</td>
+                <td>13</td>
+                <td>14</td>
+                <td>12</td>
+                <td>13</td>
+                <td>13</td>
+                <td>13</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>13</td>
+              </tr>
+              <tr class="brown lighten-4">
+                <td>Chicken Eggs: Dark Brown</td>
+                <td>8</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td>8</td>
+                <td>8</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>9</td>
+                <td>8</td>
+              </tr>
+              <tr class="white">
+                <td>Chicken Eggs: White</td>
+                <td>10</td>
+                <td>10</td>
+                <td>11</td>
+                <td>10</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+                <td>10</td>
+                <td>10</td>
+                <td>9</td>
+                <td>11</td>
+              </tr>
+              <tr class="teal lighten-5">
+                <td>Chicken Eggs: Blu/Grn</td>
+                <td>6</td>
+                <td>4</td>
+                <td>4</td>
+                <td>5</td>
+                <td>5</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>5</td>
+              </tr>
+              <tr class="white">
+                <td>Chicken Eggs: Bantam</td>
+                <td>5</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>5</td>
+                <td>6</td>
+                <td>5</td>
+                <td>5</td>
+                <td>6</td>
+                <td>6</td>
+                <td>5</td>
+              </tr>
+              <tr class="green lighten-5">
+                <td>Duck Eggs</td>
+                <td>8</td>
+                <td>8</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>9</td>
+                <td>9</td>
+              </tr>
+              <tr class="white">
+                <td>Goose Eggs</td>
+                <td>5</td>
+                <td>4</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>4</td>
+                <td>5</td>
+                <td>5</td>
+                <td>6</td>
+                <td>6</td>
+                <td>4</td>
+              </tr>
+              <tr class="orange lighten-5">
+                <td>Turkey Eggs</td>
+                <td>8</td>
+                <td>8</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>8</td>
+                <td>9</td>
+                <td>9</td>
+              </tr>
+              <tr class="brown lighten-5">
+                <td>Guinea Hen Eggs</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+                <td>8</td>
+                <td>8</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>9</td>
+                <td>9</td>
+              </tr>
+              <tr class="brown lighten-4">
+                <td>Quail Eggs</td>
+                <td>16</td>
+                <td>15</td>
+                <td>15</td>
+                <td>16</td>
+                <td>16</td>
+                <td>16</td>
+                <td>15</td>
+                <td>15</td>
+                <td>16</td>
+                <td>15</td>
+                <td>16</td>
+              </tr>
+            </tbody>
+        </table>
+        <br>
       </div>
     </div>
-  </div>
-  <div class="container">
-  <br>
-    <div class="input-field col s12 grey lighten-3 ">
-    <br>
-      <% @eggs.each do |egg| %>
-      <h3><%= egg.id %><small><%= egg.created_at.strftime('%D') %></small></h3>
-        <ul>
-          <% egg.attributes.each do |key, value| %>
-          <li> <%= [key, value.to_i].join(', ') %> </li>
-          <% end %>
-        </ul>
-      <% end %>
+<!-- ############^ EGGS ^############################################################## -->
+<br>
+<br>
+      <div class="col 12">
+        <div class="center-align">
+          <table class="bordered responsive">
+            <thead>
+              <tr>
+                <th>FLOCK DATA</th>
+                <th>07/13/15</th>
+                <th>07/14/15</th>
+                <th>07/15/15</th>
+                <th>07/16/15</th>
+                <th>07/17/15</th>
+                <th>07/18/15</th>
+                <th>07/19/15</th>
+                <th>07/20/15</th>
+                <th>07/21/15</th>
+                <th>07/22/15</th>
+                <th>07/23/15</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="brown lighten-5">
+                <td>Chickens: Light Brown Eggs</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+                <td>6</td>
+              </tr>
+              <tr class="brown lighten-4">
+                <td>Chickens: Dark Brown Eggs</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+              </tr>
+              <tr class="white">
+                <td>Chickens: White Eggs</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>4</td>
+                <td>4</td>
+              </tr>
+              <tr class="teal lighten-5">
+                <td>Chickens: Blu/Grn Eggs</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr class="white">
+                <td>Chickens: Bantam</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr class="green lighten-5">
+                <td>Ducks</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+              </tr>
+              <tr class="white">
+                <td>Geese</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr class="orange lighten-5">
+                <td>Turkeys</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr class="brown lighten-5">
+                <td>Guinea Hens</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+                <td>7</td>
+              </tr>
+              <tr class="brown lighten-4">
+                <td>Quail</td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+                <td>11</td>
+              </tr>
+            </tbody>
+        </table>
+        <br>
+      </div>
     </div>
+   </div>
+ </div>
+<!-- ############^ FLOCKS ^############################################################## -->
+<br>
+<br>
+  <div class="col 12">
+    <div class="center-align">
+      <table class="bordered responsive">
+        <thead>
+          <tr>
+            <th>INCOME</th>
+            <th>07/13/15</th>
+            <th>07/14/15</th>
+            <th>07/15/15</th>
+            <th>07/16/15</th>
+            <th>07/17/15</th>
+            <th>07/18/15</th>
+            <th>07/19/15</th>
+            <th>07/20/15</th>
+            <th>07/21/15</th>
+            <th>07/22/15</th>
+            <th>07/23/15</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="brown lighten-5">
+            <td>Chicken Eggs: Light Brown</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$60</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$42</td>
+          </tr>
+          <tr class="brown lighten-4">
+            <td>Chicken Eggs: Dark Brown</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$30</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$18</td>
+          </tr>
+          <tr class="white">
+            <td>Chicken Eggs: White</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$36</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$30</td>
+          </tr>
+          <tr class="teal lighten-5">
+            <td>Chicken Eggs: Blu/Grn</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$24</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$30</td>
+          </tr>
+          <tr class="white">
+            <td>Chicken Eggs: Bantam</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$6</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$12</td>
+          </tr>
+          <tr class="green lighten-5">
+            <td>Duck Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$108</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$144</td>
+          </tr>
+          <tr class="white">
+            <td>Goose Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$48</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$48</td>
+          </tr>
+          <tr class="orange lighten-5">
+            <td>Turkey Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$24</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$48</td>
+          </tr>
+          <tr class="brown lighten-5">
+            <td>Guinea Hen Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$6</td>
+          </tr>
+          <tr class="brown lighten-4">
+            <td>Quail Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$40</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$40</td>
+          </tr>
+        </tbody>
+    </table>
+    <br>
   </div>
 </div>
+<!-- ############^ INCOME ^############################################################## -->
 <br>
+<br>
+ <div class="col 12">
+    <div class="center-align">
+      <table class="bordered responsive">
+        <thead>
+          <tr>
+            <th>INCOME</th>
+            <th>07/13/15</th>
+            <th>07/14/15</th>
+            <th>07/15/15</th>
+            <th>07/16/15</th>
+            <th>07/17/15</th>
+            <th>07/18/15</th>
+            <th>07/19/15</th>
+            <th>07/20/15</th>
+            <th>07/21/15</th>
+            <th>07/22/15</th>
+            <th>07/23/15</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="brown lighten-5">
+            <td>Chicken Eggs: Light Brown</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$60</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$42</td>
+          </tr>
+          <tr class="brown lighten-4">
+            <td>Chicken Eggs: Dark Brown</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$30</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$18</td>
+          </tr>
+          <tr class="white">
+            <td>Chicken Eggs: White</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$36</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$30</td>
+          </tr>
+          <tr class="teal lighten-5">
+            <td>Chicken Eggs: Blu/Grn</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$24</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$30</td>
+          </tr>
+          <tr class="white">
+            <td>Chicken Eggs: Bantam</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$6</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$12</td>
+          </tr>
+          <tr class="green lighten-5">
+            <td>Duck Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$108</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$144</td>
+          </tr>
+          <tr class="white">
+            <td>Goose Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$48</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$48</td>
+          </tr>
+          <tr class="orange lighten-5">
+            <td>Turkey Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$24</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$48</td>
+          </tr>
+          <tr class="brown lighten-5">
+            <td>Guinea Hen Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$6</td>
+          </tr>
+          <tr class="brown lighten-4">
+            <td>Quail Eggs</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$40</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>$40</td>
+          </tr>
+        </tbody>
+    </table>
+    <br>
+  </div>
+</div>

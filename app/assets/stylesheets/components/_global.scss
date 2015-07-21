@@ -320,7 +320,7 @@ footer.page-footer {
 
 // Tables
 table, th, td {
-   border: none;
+  border: solid 1px white;
 }
 
 table {
@@ -328,9 +328,9 @@ table {
   display: table;
 
   &.bordered > thead > tr,
-  &.bordered > tbody > tr {
+  &.bordered > tbody > tr{
     border-bottom: 1px solid $table-border-color;
-  }
+    }
 
   &.striped > tbody {
     > tr:nth-child(odd) {
